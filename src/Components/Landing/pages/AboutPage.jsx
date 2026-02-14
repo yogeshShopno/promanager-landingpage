@@ -1,0 +1,332 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import AboutSection from '../components/AboutSection';
+import { Helmet } from "@dr.pogodin/react-helmet";
+
+const AboutPage = () => {
+    return (
+        <div className="min-h-screen bg-[var(--color-bg-secondary)]">
+            <Helmet>
+                {/* ✅ Title & Meta */}
+                <title>About promanager | Payroll & Attendance Software</title>
+                <meta
+                    name="description"
+                    content="Learn about promanager (official payroll & attendance software). Discover our mission, vision, and commitment to simplifying payroll for modern businesses worldwide."
+                />
+                <link rel="canonical" href="https://promanager.com/about" />
+
+                {/* ✅ Keywords */}
+                <meta
+                    name="keywords"
+                    content="About promanager, Sync Wage, Payroll Software Company, HR Tech, SaaS Payroll, Attendance Management"
+                />
+
+                {/* ✅ Open Graph (Facebook/LinkedIn) */}
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="promanager" />
+                <meta property="og:title" content="About promanager | Payroll & Attendance Software" />
+                <meta
+                    property="og:description"
+                    content="Discover promanager – the SaaS payroll platform built by experts to simplify compliance, automate salary processing, and empower modern businesses."
+                />
+                <meta property="og:url" content="https://promanager.com/about" />
+                <meta property="og:image" content="https://promanager.com/logo.png" />
+
+                {/* ✅ Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@promanager" />
+                <meta name="twitter:title" content="About promanager | Payroll & Attendance Software" />
+                <meta
+                    name="twitter:description"
+                    content="Learn more about promanager (not Syncwave) – official payroll & attendance management software built for accuracy, compliance, and trust."
+                />
+                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+            </Helmet>
+            {/* Hero About Section */}
+            <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-bg-gradient-start)] to-[var(--color-bg-gradient-end)]">
+                <div className="container mx-auto max-w-7xl text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="inline-block bg-[var(--color-cell-p-bg)] text-[var(--color-cell-p-text)] px-4 py-2 rounded-full text-sm font-medium mb-6"
+                    >
+                        About promanager
+                    </motion.div>
+
+                    <motion.h1
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-4xl md:text-6xl font-bold text-[var(--color-text-primary)] mb-6"
+                    >
+                        Empowering Your <br />
+                        <span className="text-[var(--color-blue)]">Payroll Journey</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-12"
+                    >
+                        Transform your payroll management with innovative solutions designed to simplify processes, ensure accuracy, and save time for modern businesses.
+                    </motion.p>
+                </div>
+            </section>
+
+            <AboutSection />
+
+            {/* Detailed About Section */}
+            <section className="py-16 px-4 bg-[var(--color-bg-secondary)]">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column - Image and Features */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="relative"
+                        >
+                            {/* Main Image */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden mb-6 shadow-2xl"
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Payroll professionals collaborating in modern office"
+                                    className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                            </motion.div>
+
+                            {/* Feature Overlay Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="absolute -bottom-6 -right-6 bg-[var(--color-bg-secondary)] rounded-2xl p-6 shadow-xl max-w-xs border border-[var(--color-border-secondary)]"
+                            >
+                                <div className="flex items-center mb-3">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-success)] to-[var(--color-success-medium)] rounded-full flex items-center justify-center mr-3">
+                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="font-bold text-[var(--color-text-primary)]">99% Accuracy</h4>
+                                </div>
+                                <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                                    Businesses trust promanager for error-free payroll processing, delivering reliable results month after month.
+                                </p>
+                            </motion.div>
+
+                            {/* Floating Stats */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                viewport={{ once: true }}
+                                className="absolute top-6 left-6 bg-[var(--color-bg-secondary-30)] backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                            >
+                                <div className="text-2xl font-bold text-[var(--color-blue)]">10K+</div>
+                                <div className="text-sm text-[var(--color-text-secondary)]">Satisfied Users</div>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Right Column - Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                viewport={{ once: true }}
+                                className="inline-block bg-[var(--color-blue-lightest)] text-[var(--color-text-blue)] px-3 py-1 rounded-full text-sm font-medium mb-4"
+                            >
+                                About promanager
+                            </motion.div>
+
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                viewport={{ once: true }}
+                                className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-6 leading-tight"
+                            >
+                                Revolutionizing Payroll Management for
+                                <span className="text-[var(--color-blue)]"> Modern Businesses</span>
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="text-[var(--color-text-secondary)] mb-8 leading-relaxed text-lg"
+                            >
+                                At promanager, we believe that simplified payroll builds stronger businesses.
+                                Our mission is to transform how organizations handle salary disbursement,
+                                compliance, and workforce payments — with speed, accuracy, and transparency.
+                                Founded by payroll experts and technology leaders, promanager delivers a scalable,
+                                user-friendly platform that eliminates manual errors, reduces workload, and enhances employee trust.
+                            </motion.p>
+
+                            {/* Feature Points */}
+                            <div className="space-y-6">
+                                <motion.div
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.5 }}
+                                    viewport={{ once: true }}
+                                    className="flex items-start group hover:bg-[var(--color-blue-lightest)] p-4 rounded-xl transition-colors duration-300"
+                                >
+                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-success)] to-[var(--color-success-medium)] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-[var(--color-text-primary)] mb-2 text-lg">
+                                            Scalable for Any Business Size
+                                        </h4>
+                                        <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                                            From small startups to large enterprises, promanager adapts seamlessly
+                                            to your organizational needs and grows alongside your business.
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.6 }}
+                                    viewport={{ once: true }}
+                                    className="flex items-start group hover:bg-[var(--color-blue-lightest)] p-4 rounded-xl transition-colors duration-300"
+                                >
+                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-[var(--color-text-primary)] mb-2 text-lg">
+                                            Designed by Payroll Experts
+                                        </h4>
+                                        <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                                            Created by professionals who understand both payroll compliance and modern technology —
+                                            ensuring practical solutions that work in the real world.
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+
+                            {/* CTA Buttons */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.7 }}
+                                viewport={{ once: true }}
+                                className="flex flex-wrap gap-4 mt-8"
+                            >
+                                <button className="bg-[var(--color-blue)] hover:bg-[var(--color-blue-dark)] text-[var(--color-text-white)] px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
+                                    Get Started Today
+                                </button>
+                                <button className="border-2 border-[var(--color-border-secondary)] hover:border-[var(--color-blue)] text-[var(--color-text-secondary)] hover:text-[var(--color-blue)] px-8 py-3 rounded-xl font-semibold transition-colors duration-300">
+                                    Learn More
+                                </button>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team/Values Section */}
+            <section className="py-16 px-4 bg-[var(--color-bg-primary)]">
+                <div className="container mx-auto max-w-7xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">Our Vision</h2>
+                        <p className="text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+                            Built by a dedicated team of payroll specialists and tech innovators with a passion for simplifying payroll worldwide.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                                title: "Innovation First",
+                                description: "We continuously evolve promanager with the latest payroll technology trends and valuable client feedback."
+                            },
+                            {
+                                image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                                title: "Business-Centric",
+                                description: "Every feature we build is designed with your business needs in mind — making payroll efficient, accurate, and stress-free."
+                            },
+                            {
+                                image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                                title: "Global Support",
+                                description: "Our dedicated support team ensures you're never alone in your payroll journey — assistance whenever you need it."
+                            }
+                        ].map((card, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: i * 0.2 }}
+                                viewport={{ once: true }}
+                                className="group"
+                            >
+                                <motion.div
+                                    whileHover={{ y: -10 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:shadow-2xl transition-shadow duration-300"
+                                >
+                                    <img
+                                        src={card.image}
+                                        alt={card.title}
+                                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </motion.div>
+                                <motion.h3
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.6, delay: i * 0.2 + 0.3 }}
+                                    viewport={{ once: true }}
+                                    className="text-xl font-bold text-[var(--color-text-primary)] mb-2"
+                                >
+                                    {card.title}
+                                </motion.h3>
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.6, delay: i * 0.2 + 0.4 }}
+                                    viewport={{ once: true }}
+                                    className="text-[var(--color-text-secondary)]"
+                                >
+                                    {card.description}
+                                </motion.p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default AboutPage;
