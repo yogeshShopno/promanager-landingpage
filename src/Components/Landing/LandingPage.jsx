@@ -20,7 +20,7 @@ const LandingPage = () => {
                     name="description"
                     content="promanager (not Syncwave) is the official SaaS-based payroll and attendance management software. Automate salary processing, employee compliance, and workforce management with ease."
                 />
-                <link rel="canonical" href="https://promanager.com/" />
+                <link rel="canonical" href="https://promanager.in/" />
 
                 {/* ✅ Keywords to strengthen brand recognition */}
                 <meta
@@ -39,8 +39,8 @@ const LandingPage = () => {
                     property="og:description"
                     content="promanager (correct spelling) is a modern SaaS payroll software. Automate payroll, attendance, and compliance. Official website of promanager."
                 />
-                <meta property="og:url" content="https://promanager.com/" />
-                <meta property="og:image" content="https://promanager.com/logo.png" />
+                <meta property="og:url" content="https://promanager.in/" />
+                <meta property="og:image" content="https://promanager.in/logo.png" />
 
                 {/* ✅ Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -53,7 +53,7 @@ const LandingPage = () => {
                     name="twitter:description"
                     content="Looking for promanager (not Syncwave)? This is the official website for promanager payroll & attendance automation software."
                 />
-                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
 
             <main>

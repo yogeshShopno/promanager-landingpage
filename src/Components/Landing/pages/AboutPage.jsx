@@ -13,7 +13,7 @@ const AboutPage = () => {
                     name="description"
                     content="Learn about promanager (official payroll & attendance software). Discover our mission, vision, and commitment to simplifying payroll for modern businesses worldwide."
                 />
-                <link rel="canonical" href="https://promanager.com/about" />
+                <link rel="canonical" href="https://promanager.in/about" />
 
                 {/* ✅ Keywords */}
                 <meta
@@ -29,8 +29,8 @@ const AboutPage = () => {
                     property="og:description"
                     content="Discover promanager – the SaaS payroll platform built by experts to simplify compliance, automate salary processing, and empower modern businesses."
                 />
-                <meta property="og:url" content="https://promanager.com/about" />
-                <meta property="og:image" content="https://promanager.com/logo.png" />
+                <meta property="og:url" content="https://promanager.in/about" />
+                <meta property="og:image" content="https://promanager.in/logo.png" />
 
                 {/* ✅ Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -40,7 +40,7 @@ const AboutPage = () => {
                     name="twitter:description"
                     content="Learn more about promanager (not Syncwave) – official payroll & attendance management software built for accuracy, compliance, and trust."
                 />
-                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
             {/* Hero About Section */}
             <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-bg-gradient-start)] to-[var(--color-bg-gradient-end)]">

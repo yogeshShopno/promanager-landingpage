@@ -45,7 +45,7 @@ const FeaturesSection = () => {
           name="description"
           content="Explore promanager payroll software features: automated salary processing, compliance-ready payroll, real-time insights, employee self-service, and secure HR operations."
         />
-        <link rel="canonical" href="https://promanager.com/features" />
+        <link rel="canonical" href="https://promanager.in/features" />
         <meta
           name="keywords"
           content="Payroll Software Features, promanager, Salary Automation, Payroll Compliance, Employee Self-Service, HR SaaS"
@@ -59,8 +59,8 @@ const FeaturesSection = () => {
           property="og:description"
           content="Discover the features of promanager payroll software: automate payroll, integrate attendance, ensure compliance, and empower employees."
         />
-        <meta property="og:url" content="https://promanager.com/features" />
-        <meta property="og:image" content="https://promanager.com/logo.png" />
+        <meta property="og:url" content="https://promanager.in/features" />
+        <meta property="og:image" content="https://promanager.in/logo.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -70,7 +70,7 @@ const FeaturesSection = () => {
           name="twitter:description"
           content="Automated payroll, attendance integration, employee self-service, and compliance tools with promanager."
         />
-        <meta name="twitter:image" content="https://promanager.com/logo.png" />
+        <meta name="twitter:image" content="https://promanager.in/logo.png" />
       </Helmet>
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header with Animation */}

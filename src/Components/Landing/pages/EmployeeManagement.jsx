@@ -78,7 +78,7 @@ const EmployeeManagement = () => {
                     name="description"
                     content="promanager Employee Management Software helps businesses streamline HR, payroll, attendance, compliance, and workforce operations with ease and accuracy."
                 />
-                <link rel="canonical" href="https://promanager.com/employee-management" />
+                <link rel="canonical" href="https://promanager.in/employee-management" />
                 <meta
                     name="keywords"
                     content="Employee Management, promanager, Payroll Software, HR Platform, Workforce Management, SaaS HR Software"
@@ -92,8 +92,8 @@ const EmployeeManagement = () => {
                     property="og:description"
                     content="Manage payroll, attendance, compliance, and HR with promanager Employee Management Software. Trusted by modern businesses for accuracy and automation."
                 />
-                <meta property="og:url" content="https://promanager.com/employee-management" />
-                <meta property="og:image" content="https://promanager.com/logo.png" />
+                <meta property="og:url" content="https://promanager.in/employee-management" />
+                <meta property="og:image" content="https://promanager.in/logo.png" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -103,7 +103,7 @@ const EmployeeManagement = () => {
                     name="twitter:description"
                     content="Discover promanager Employee Management Software – automate HR, payroll, compliance, and workforce management for modern businesses."
                 />
-                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
             {/* ================= Hero Section ================= */}
             <div className="bg-[var(--color-white)]">

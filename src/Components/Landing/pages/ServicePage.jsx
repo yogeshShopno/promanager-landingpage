@@ -242,7 +242,7 @@ const ServicePage = () => {
                     name="description"
                     content="Discover promanager payroll and HR services. Automate salary, compliance, attendance, employee management, and insights with our secure SaaS platform."
                 />
-                <link rel="canonical" href="https://promanager.com/services" />
+                <link rel="canonical" href="https://promanager.in/services" />
                 <meta
                     name="keywords"
                     content="promanager Services, Payroll Automation, HR Platform, Attendance Management, SaaS Payroll, Employee Self Service"
@@ -256,8 +256,8 @@ const ServicePage = () => {
                     property="og:description"
                     content="Streamline payroll, HR, and workforce management with promanager's SaaS platform. Trusted by modern businesses for compliance and automation."
                 />
-                <meta property="og:url" content="https://promanager.com/services" />
-                <meta property="og:image" content="https://promanager.com/logo.png" />
+                <meta property="og:url" content="https://promanager.in/services" />
+                <meta property="og:image" content="https://promanager.in/logo.png" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -267,7 +267,7 @@ const ServicePage = () => {
                     name="twitter:description"
                     content="Explore promanager's payroll and HR services. Automate salaries, compliance, and employee management with ease."
                 />
-                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
             {/* Header Section */}
             <motion.div

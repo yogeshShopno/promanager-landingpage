@@ -242,10 +242,10 @@ const Footer = () => {
                                     >
                                         <p className="mb-2">Email us:</p>
                                         <a
-                                            href="mailto:support@promanager.com"
+                                            href="mailto:support@promanager.in"
                                             className="text-[var(--color-blue-lighter)] hover:underline"
                                         >
-                                            support@promanager.com
+                                            support@promanager.in
                                         </a>
                                     </motion.div>
                                 </motion.div>

@@ -48,7 +48,7 @@ const PayrollBenefits = () => {
                     name="description"
                     content="Discover promanager Payroll & Benefits Software – automate salary disbursement, compliance, tax, and employee perks. Build trust and boost retention."
                 />
-                <link rel="canonical" href="https://promanager.com/payroll-benefits" />
+                <link rel="canonical" href="https://promanager.in/payroll-benefits" />
                 <meta
                     name="keywords"
                     content="Payroll Benefits, Payroll Software, promanager, Salary Automation, Employee Benefits, Compliance Software, HR SaaS"
@@ -62,8 +62,8 @@ const PayrollBenefits = () => {
                     property="og:description"
                     content="promanager helps businesses with payroll automation, benefits management, and compliance – making employees happier and businesses more efficient."
                 />
-                <meta property="og:url" content="https://promanager.com/payroll-benefits" />
-                <meta property="og:image" content="https://promanager.com/logo.png" />
+                <meta property="og:url" content="https://promanager.in/payroll-benefits" />
+                <meta property="og:image" content="https://promanager.in/logo.png" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
@@ -73,7 +73,7 @@ const PayrollBenefits = () => {
                     name="twitter:description"
                     content="Simplify payroll, compliance, and employee benefits with promanager. The SaaS solution for modern HR."
                 />
-                <meta name="twitter:image" content="https://promanager.com/logo.png" />
+                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
             {/* First Section - Workforce Management */}
             <motion.div

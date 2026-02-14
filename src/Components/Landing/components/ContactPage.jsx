@@ -77,7 +77,7 @@ const ContactPage = () => {
           name="description"
           content="Get in touch with promanager payroll experts. Book a demo, schedule a call, or reach our support team for payroll, HR, and compliance assistance."
         />
-        <link rel="canonical" href="https://promanager.com/contact" />
+        <link rel="canonical" href="https://promanager.in/contact" />
         <meta
           name="keywords"
           content="Contact promanager, promanager Support, Payroll Software Contact, Book Demo, HR Software Help, promanager Sales"
@@ -91,8 +91,8 @@ const ContactPage = () => {
           property="og:description"
           content="Book a personalized demo or contact promanager support for payroll, HR, and compliance solutions."
         />
-        <meta property="og:url" content="https://promanager.com/contact" />
-        <meta property="og:image" content="https://promanager.com/logo.png" />
+        <meta property="og:url" content="https://promanager.in/contact" />
+        <meta property="og:image" content="https://promanager.in/logo.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -102,7 +102,7 @@ const ContactPage = () => {
           name="twitter:description"
           content="Connect with promanager for payroll automation and HR software. Book a call or talk to support."
         />
-        <meta name="twitter:image" content="https://promanager.com/logo.png" />
+        <meta name="twitter:image" content="https://promanager.in/logo.png" />
       </Helmet>
 
       <main>
