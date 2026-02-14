@@ -446,3 +446,5 @@ For technical support or feature requests, please contact:
 **Note:** This is the frontend application for the Attendance Management System. For backend API documentation and setup instructions, please refer to the backend repository documentation.
 
  
+#   p r o m a n a g e r  
+ 
