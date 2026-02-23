@@ -1,108 +1,218 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
-import { Users, UserCheck, BarChart3 } from "lucide-react";
+import { Users, UserCheck, BarChart3, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Users,
     title: "Automated Payroll Management",
     description: "Process salaries, deductions, and taxes accurately with just a few clicks — reducing errors and saving time.",
-    iconBg: "bg-[var(--color-blue-darker)]",
-    link: "#"
+    image: "../../../../public/images/Automated-Payroll-Management.png",
   },
   {
     icon: UserCheck,
     title: "Leave & Attendance Integration",
     description: "Seamlessly sync employee attendance and leave records to ensure payroll is always accurate and compliant.",
-    iconBg: "bg-[var(--color-blue-darker)]",
-    link: "#"
+    image: "../../../../public/images/Leave-Attendance-Integration.png",
   },
   {
     icon: BarChart3,
     title: "Real-Time Payroll Insights",
     description: "Track expenses, monitor compliance, and generate payroll reports with actionable insights in real time.",
-    iconBg: "bg-[var(--color-blue-darker)]",
-    link: "#"
+    image: "../../../../public/images/Real-Time-Payroll-Insights.png",
   }
 ];
 
 const ServicesSection = () => {
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--color-bg-primary)" }}>
-      <div className="container mx-auto px-4">
-        {/* Header Section with Animation */}
+    <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#6C4CF1]/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/5 to-transparent rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex justify-between items-start mb-16"
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          <div className="text-left">
-            <p className="text-[var(--color-text-secondary)] text-sm font-medium mb-2">Our Services</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
-              Future-Ready Payroll<br />Management Platform
-            </h2>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <div className="relative mb-8">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]"
+                >
+                  Our Services
+                </motion.span>
+                
+                {/* Curved Line SVG */}
+                <motion.svg
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                  className="absolute top-10 left-0 w-40 h-4"
+                  viewBox="0 0 160 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <motion.path
+                    d="M2 10C35 2, 70 2, 105 10C130 16, 145 10, 158 10"
+                    stroke="url(#gradient-services)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient id="gradient-services" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#6C4CF1" />
+                      <stop offset="100%" stopColor="#4B2EDB" />
+                    </linearGradient>
+                  </defs>
+                </motion.svg>
+              </div>
+              
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-[var(--color-text-primary)] leading-tight">
+                Future-Ready Payroll
+                <br />
+                <span className="bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+                  Management Platform
+                </span>
+              </h2>
+            </div>
+            <motion.p
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-base text-[var(--color-text-secondary)] max-w-md"
+            >
+              Streamline your workforce management with powerful automation and insights
+            </motion.p>
           </div>
         </motion.div>
 
-        {/* Services Grid with Staggered Animation */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Services - Alternating Layout */}
+        <div className="space-y-16 lg:space-y-20">
           {services.map((service, index) => {
-            const IconComponent = service.icon;
+            const Icon = service.icon;
+            const isEven = index % 2 === 0;
+
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.2,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -10,
-                  transition: { duration: 0.3 }
-                }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
+                  isEven ? "" : "lg:grid-flow-dense"
+                }`}
               >
-                <Card 
-                  className="border-[var(--color-border-primary)] hover:shadow-lg transition-all duration-300 group text-left bg-[var(--color-bg-card)] h-full"
+                {/* Image Side */}
+                <motion.div
+                  initial={{ opacity: 0, x: isEven ? -100 : 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className={`relative ${isEven ? "" : "lg:col-start-2"}`}
                 >
-                  <CardContent className="p-8 space-y-6">
-                    <motion.div 
-                      className={`w-16 h-16 ${service.iconBg} rounded-full flex items-center justify-center transition-all duration-300`}
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: 5,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      <IconComponent className="h-8 w-8 text-[var(--color-text-white)]" />
-                    </motion.div>
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">
-                        {service.title}
-                      </h3>
-                      <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">
-                        {service.description}
-                      </p>
-                      <motion.div
+                  <div className="relative group">
+                    {/* Main Image */}
+                    <div className="relative rounded-2xl overflow-hidden ">
+                      <motion.img
                         whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Button 
-                          className="bg-[var(--color-blue-darker)] text-[var(--color-text-white)] hover:bg-[var(--color-blue-darkest)] text-sm px-6 py-2 rounded-full transition-all duration-300"
-                        >
-                          See Detail →
-                        </Button>
-                      </motion.div>
+                        transition={{ duration: 0.5 }}
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-[320px] object-contain"
+                      />
                     </div>
-                  </CardContent>
-                </Card>
+
+                    {/* Floating Icon Badge */}
+                    {/* <motion.div
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.5, type: "spring" }}
+                      className={`absolute ${
+                        isEven ? "-right-6 -bottom-6" : "-left-6 -bottom-6"
+                      } w-16 h-16 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded-xl flex items-center justify-center shadow-xl`}
+                    >
+                      <Icon className="w-8 h-8 text-white" />
+                    </motion.div> */}
+
+                    {/* Decorative Elements */}
+                    {/* <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      className={`absolute ${
+                        isEven ? "-left-8 top-8" : "-right-8 top-8"
+                      } w-10 h-10 border-4 border-[#6C4CF1]/20 rounded-full`}
+                    /> */}
+                  </div>
+                </motion.div>
+
+                {/* Content Side */}
+                <motion.div
+                  initial={{ opacity: 0, x: isEven ? 100 : -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className={`space-y-6 ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}
+                >
+                  {/* Number Badge */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-[#6C4CF1]/10 to-[#4B2EDB]/10 rounded-xl"
+                  >
+                    <span className="text-xl font-black bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+                      0{index + 1}
+                    </span>
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)] leading-tight">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Learn More Link */}
+                  <motion.div
+                    whileHover={{ x: 10 }}
+                    className="inline-flex items-center gap-3 text-[#6C4CF1] font-bold text-lg cursor-pointer group"
+                  >
+                    <span>Learn More</span>
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ArrowRight className="w-6 h-6" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Decorative Line */}
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="h-1 w-16 bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] rounded-full origin-left"
+                  />
+                </motion.div>
               </motion.div>
             );
           })}

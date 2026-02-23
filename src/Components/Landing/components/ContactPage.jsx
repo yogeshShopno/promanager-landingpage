@@ -4,40 +4,9 @@ import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Check, Zap } from "lucide-react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-// Images
-const mainCollaborationImage =
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-const womanLaptopImage =
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop";
-
-const faqData = [
-  {
-    question: "How quickly can we get set up on promanager?",
-    answer:
-      "Most organizations can get started within minutes. promanager offers a simple and guided setup process for payroll and attendance management.",
-  },
-  {
-    question: "Do you provide customer support?",
-    answer:
-      "Yes! promanager provides dedicated customer support via chat, email, and phone to assist you at every step.",
-  },
-  {
-    question: "Is there a free trial available?",
-    answer:
-      "Currently, promanager does not offer a free trial. However, our team is happy to provide a guided demo to help you understand the platform before getting started.",
-  },
-  {
-    question: "Can promanager integrate with existing systems?",
-    answer:
-      "Yes, promanager supports seamless integration with various HR, attendance, and accounting systems to ensure smooth payroll operations.",
-  },
-];
-
-
-// Animated Counter Component
 const AnimatedCounter = ({ from, to, duration, symbol }) => {
   const [count, setCount] = useState(from);
   const ref = useRef(null);
@@ -46,7 +15,6 @@ const AnimatedCounter = ({ from, to, duration, symbol }) => {
   useEffect(() => {
     if (isInView) {
       const start = performance.now();
-
       const animate = (timestamp) => {
         const progress = Math.min((timestamp - start) / duration, 1);
         const newCount = Math.floor(progress * (to - from) + from);
@@ -55,7 +23,6 @@ const AnimatedCounter = ({ from, to, duration, symbol }) => {
           requestAnimationFrame(animate);
         }
       };
-
       requestAnimationFrame(animate);
     }
   }, [isInView, from, to, duration]);
@@ -69,406 +36,320 @@ const AnimatedCounter = ({ from, to, duration, symbol }) => {
 };
 
 const ContactPage = () => {
+  const faqData = [
+    {
+      question: "How quickly can we get set up on promanager?",
+      answer: "Most organizations can get started within minutes. promanager offers a simple and guided setup process for payroll and attendance management.",
+    },
+    {
+      question: "Do you provide customer support?",
+      answer: "Yes! promanager provides dedicated customer support via chat, email, and phone to assist you at every step.",
+    },
+    {
+      question: "Is there a free trial available?",
+      answer: "Currently, promanager does not offer a free trial. However, our team is happy to provide a guided demo to help you understand the platform before getting started.",
+    },
+    {
+      question: "Can promanager integrate with existing systems?",
+      answer: "Yes, promanager supports seamless integration with various HR, attendance, and accounting systems to ensure smooth payroll operations.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[var(--color-bg-primary)]">
       <Helmet>
         <title>Contact promanager | Book a Demo & Support</title>
-        <meta
-          name="description"
-          content="Get in touch with promanager payroll experts. Book a demo, schedule a call, or reach our support team for payroll, HR, and compliance assistance."
-        />
+        <meta name="description" content="Get in touch with promanager payroll experts. Book a demo, schedule a call, or reach our support team for payroll, HR, and compliance assistance." />
         <link rel="canonical" href="https://promanager.in/contact" />
-        <meta
-          name="keywords"
-          content="Contact promanager, promanager Support, Payroll Software Contact, Book Demo, HR Software Help, promanager Sales"
-        />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="promanager" />
-        <meta property="og:title" content="Contact promanager | Book a Demo & Support" />
-        <meta
-          property="og:description"
-          content="Book a personalized demo or contact promanager support for payroll, HR, and compliance solutions."
-        />
-        <meta property="og:url" content="https://promanager.in/contact" />
-        <meta property="og:image" content="https://promanager.in/logo.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@promanager" />
-        <meta name="twitter:title" content="Contact promanager | Book a Demo & Support" />
-        <meta
-          name="twitter:description"
-          content="Connect with promanager for payroll automation and HR software. Book a call or talk to support."
-        />
-        <meta name="twitter:image" content="https://promanager.in/logo.png" />
       </Helmet>
 
-      <main>
-        {/* Hero Section */}
-        <section className="py-16 md:py-20 lg:py-32 bg-gradient-to-br from-[var(--color-bg-gradient-start)] to-[var(--color-bg-gradient-end)] overflow-hidden">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left Side */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
-                <div className="inline-block px-4 py-2 bg-[var(--color-cell-l-bg)] text-[var(--color-cell-l-text)] text-xs sm:text-sm font-medium rounded-full mb-6">
-                  All-in-One Efficiency
-                </div>
+      {/* Hero Section with Curved Design */}
+      <div className="relative bg-[var(--color-blue)] overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+            transition={{ duration: 20, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+            animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
+            transition={{ duration: 15, repeat: Infinity }}
+          />
+        </div>
 
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[var(--color-text-primary)]"
-                >
-                  Optimize Workforce Management with{" "}
-                  <span className="text-[var(--color-text-primary)]">
-                    promanager
-                  </span>
-                </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-xl"
-                >
-                  Simplify every aspect of HR — from recruitment and onboarding
-                  to payroll, performance reviews, and employee analytics — with
-                  a secure, scalable, and user-friendly cloud platform built for
-                  modern teams and businesses
-                </motion.p>
-
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="bg-[var(--color-blue-darker)] text-[var(--color-text-white)] px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[var(--color-blue-dark)] transition-colors group text-base sm:text-lg">
-                    Get Started Now
-                    <motion.div
-                      className="ml-2"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ArrowRight className="h-5 w-5" />
-                    </motion.div>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-[var(--color-border-secondary)] text-[var(--color-text-secondary)] px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors text-base sm:text-lg"
-                  >
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Right Side */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="relative h-[400px] sm:h-[500px] lg:h-[600px]"
-              >
-                {/* Main Image */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="absolute top-0 left-0 z-5 w-64 sm:w-80 md:w-96 h-56 sm:h-72 md:h-80 overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl"
-                >
-                  <img
-                    src={mainCollaborationImage}
-                    alt="Team collaboration"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                {/* Active Users */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  className="absolute top-4 sm:top-8 right-2 sm:right-0 z-10 bg-[var(--color-bg-card)] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl w-56 sm:w-72"
-                >
-                  <div className="space-y-2 sm:space-y-3">
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
-                      <AnimatedCounter
-                        from={0}
-                        to={10}
-                        duration={1500}
-                        symbol=",000+"
-                      />
-                    </h3>
-                    <p className="font-semibold text-[var(--color-text-primary)] text-base sm:text-lg">
-                      Active Users
-                    </p>
-                    <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] leading-relaxed">
-                      Companies across industries rely on our platform to manage
-                      their HR operations daily
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* Woman Image */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-8 sm:bottom-16 right-4 sm:right-8 z-5 w-56 sm:w-72 h-64 sm:h-80 overflow-hidden rounded-xl sm:rounded-3xl shadow-2xl"
-                >
-                  <img
-                    src={womanLaptopImage}
-                    alt="Professional woman"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                {/* Customer Satisfaction */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.0 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-6 sm:bottom-12 left-6 sm:left-20 z-10 bg-[var(--color-blue-darker)] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl text-[var(--color-text-white)] w-56 sm:w-72"
-                >
-                  <div className="space-y-2 sm:space-y-3">
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
-                      98%
-                    </h3>
-                    <p className="font-semibold mb-1 text-base sm:text-lg">
-                      Customer Satisfaction
-                    </p>
-                    <p className="text-xs sm:text-sm opacity-90 leading-relaxed">
-                      Our clients love our intuitive interface, responsive
-                      support, and continuous feature updates
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Book Appointment Section */}
-        <section className="py-16 md:py-20 bg-[var(--color-bg-secondary)]">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center space-y-4 mb-12"
-            >
-              <p className="text-xs sm:text-sm font-medium text-[var(--color-blue-dark)] tracking-wide uppercase">
-                Book Appointment
-              </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
-                Schedule a Call to Transform Your HR Today
-              </h2>
-              <p className="text-base sm:text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                Book a personalized session and explore how our platform fits
-                your HR needs.
-              </p>
-            </motion.div>
-
-            <motion.div
+              className="space-y-8 z-10"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <Card className="w-full border-[var(--color-border-secondary)] bg-[var(--color-bg-card)] shadow-lg">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="space-y-6">
-                    {/* Form Rows */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="fullName"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Full Name
-                        </label>
-                        <Input
-                          id="fullName"
-                          placeholder="Enter your first and last name"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="workEmail"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Work Email Address
-                        </label>
-                        <Input
-                          id="workEmail"
-                          type="email"
-                          placeholder="We'll send the meeting link here"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="companyName"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Company Name
-                        </label>
-                        <Input
-                          id="companyName"
-                          placeholder="Let us know where you're from"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="jobTitle"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Job Title / Role
-                        </label>
-                        <Input
-                          id="jobTitle"
-                          placeholder="So we can tailor the session"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="employeeCount"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Number of Employees
-                        </label>
-                        <Input
-                          id="employeeCount"
-                          placeholder="Helps us recommend the right plan"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="preferredTime"
-                          className="text-sm font-medium text-[var(--color-text-primary)]"
-                        >
-                          Preferred Date & Time
-                        </label>
-                        <Input
-                          id="preferredTime"
-                          placeholder="Choose your best time"
-                          className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="additionalNotes"
-                        className="text-sm font-medium text-[var(--color-text-primary)]"
-                      >
-                        Additional Notes or Questions (Optional)
-                      </label>
-                      <Textarea
-                        id="additionalNotes"
-                        placeholder="Let us know what you'd like to discuss."
-                        rows={4}
-                        className="border-[var(--color-border-secondary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]"
-                      />
-                    </div>
-
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="pt-4"
-                    >
-                      <Button className="w-full bg-[var(--color-blue-darker)] text-[var(--color-text-white)] py-3 sm:py-4 text-base sm:text-lg rounded-lg hover:bg-[var(--color-blue-dark)] transition-colors group">
-                        Book Appointment
-                        <motion.div
-                          className="ml-2"
-                          whileHover={{ x: 5 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ArrowRight className="h-5 w-5" />
-                        </motion.div>
-                      </Button>
-                    </motion.div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-[var(--color-bg-primary)]">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center space-y-4 mb-12 md:mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)]">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-base sm:text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                Quick answers to common questions about our platform
-              </p>
+              <motion.span
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-sm font-medium border border-white/20"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Zap className="w-4 h-4" />
+                Get in Touch
+              </motion.span>
+
+              <motion.h1
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                Let's Transform Your HR Together
+              </motion.h1>
+
+              <motion.p
+                className="text-white text-lg md:text-xl leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                Book a personalized demo and discover how promanager can streamline your payroll, attendance, and workforce management.
+              </motion.p>
+
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <motion.button
+                  className="bg-white text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Schedule a Call
+                </motion.button>
+                <motion.button
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Email Us
+                </motion.button>
+              </motion.div>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto space-y-6">
-              {faqData.map((faq, index) => (
+            {/* Right Contact Cards */}
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {[
+                { icon: Mail, label: "Email", value: "support@promanager.in", color: "from-blue-400 to-blue-600" },
+                { icon: Phone, label: "Phone", value: "+91 1234567890", color: "from-green-400 to-green-600" },
+                { icon: MapPin, label: "Location", value: "Mumbai, India", color: "from-purple-400 to-purple-600" },
+                { icon: Clock, label: "Support", value: "24/7 Available", color: "from-orange-400 to-orange-600" },
+              ].map((contact, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: "easeOut",
-                  }}
-                  viewport={{ once: true }}
-                  whileHover={{
-                    y: -5,
-                    transition: { duration: 0.3 },
-                  }}
+                  className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
                 >
-                  <Card className="border-[var(--color-border-secondary)] bg-[var(--color-bg-card)] hover:border-[var(--color-border-secondary)] transition-all duration-300 shadow-md">
-                    <CardContent className="p-4 sm:p-6">
-                      <h4 className="font-semibold text-[var(--color-text-primary)] mb-2 text-base sm:text-lg">
-                        {faq.question}
-                      </h4>
-                      <p className="text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <div className={`w-12 h-12 bg-gradient-to-br ${contact.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                    <contact.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <p className="text-white/80 text-sm mb-1">{contact.label}</p>
+                  <h3 className="text-white font-semibold text-base">{contact.value}</h3>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
-      </main>
+        </div>
+
+        {/* Curved Bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--color-bg-primary)"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Contact Form Section with Curved Title */}
+      <div className="bg-[var(--color-bg-primary)] py-20">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
+          {/* Curved Title Section */}
+          <div className="relative mb-16">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block relative">
+                <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                  Book Your <span className="text-[var(--color-blue)]">Appointment</span>
+                </span>
+                <motion.svg
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                  className="absolute -bottom-2 left-0 w-72 h-4"
+                  viewBox="0 0 290 12"
+                  fill="none"
+                >
+                  <motion.path
+                    d="M2 10C70 2, 150 2, 220 10C250 16, 270 10, 288 10"
+                    stroke="var(--color-blue)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </motion.svg>
+              </div>
+              <p className="text-[var(--color-text-secondary)] text-lg mt-6 max-w-2xl mx-auto">
+                Schedule a personalized session and explore how our platform fits your HR needs
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Card className="border-[var(--color-border)] bg-[var(--color-white)] shadow-xl">
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Full Name</label>
+                      <Input placeholder="Enter your first and last name" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Work Email Address</label>
+                      <Input type="email" placeholder="We'll send the meeting link here" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Company Name</label>
+                      <Input placeholder="Let us know where you're from" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Job Title / Role</label>
+                      <Input placeholder="So we can tailor the session" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Number of Employees</label>
+                      <Input placeholder="Helps us recommend the right plan" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-[var(--color-text-primary)]">Preferred Date & Time</label>
+                      <Input placeholder="Choose your best time" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-[var(--color-text-primary)]">Additional Notes or Questions (Optional)</label>
+                    <Textarea placeholder="Let us know what you'd like to discuss." rows={4} className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                  </div>
+
+                  <motion.button
+                    className="w-full bg-[var(--color-blue)] text-white py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book Appointment
+                  </motion.button>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* FAQ Section with Curved Background */}
+      <div className="relative bg-[var(--color-white)] py-20 overflow-hidden">
+        {/* Top Curve */}
+        <div className="absolute top-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 0L60 15C120 30 240 60 360 75C480 90 600 90 720 82.5C840 75 960 60 1080 52.5C1200 45 1320 45 1380 45L1440 45V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0Z" fill="var(--color-bg-primary)"/>
+          </svg>
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 md:px-8">
+          {/* Curved Title */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block relative">
+              <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                Frequently Asked <span className="text-[var(--color-blue)]">Questions</span>
+              </span>
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                className="absolute -bottom-2 left-0 w-80 h-4"
+                viewBox="0 0 320 12"
+                fill="none"
+              >
+                <motion.path
+                  d="M2 10C70 2, 150 2, 230 10C270 16, 300 10, 318 10"
+                  stroke="var(--color-blue)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </motion.svg>
+            </div>
+            <p className="text-[var(--color-text-secondary)] text-lg mt-6">
+              Quick answers to common questions about our platform
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {faqData.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="border-[var(--color-border)] bg-[var(--color-bg-primary)] hover:shadow-lg transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-[var(--color-blue)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Check className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-[var(--color-text-primary)] mb-2 text-lg">{faq.question}</h4>
+                        <p className="text-[var(--color-text-secondary)] leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

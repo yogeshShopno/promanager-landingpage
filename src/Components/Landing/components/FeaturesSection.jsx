@@ -38,7 +38,7 @@ const benefits = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-16 bg-[var(--color-bg-gradient-start)]">
+    <section className="py-10 lg:py-10 bg-gradient-to-b from-[var(--color-bg-primary)] to-white relative overflow-hidden">
       <Helmet>
         <title>Payroll Software Features | promanager</title>
         <meta
@@ -46,212 +46,217 @@ const FeaturesSection = () => {
           content="Explore promanager payroll software features: automated salary processing, compliance-ready payroll, real-time insights, employee self-service, and secure HR operations."
         />
         <link rel="canonical" href="https://promanager.in/features" />
-        <meta
-          name="keywords"
-          content="Payroll Software Features, promanager, Salary Automation, Payroll Compliance, Employee Self-Service, HR SaaS"
-        />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="promanager" />
-        <meta property="og:title" content="Payroll Software Features | promanager" />
-        <meta
-          property="og:description"
-          content="Discover the features of promanager payroll software: automate payroll, integrate attendance, ensure compliance, and empower employees."
-        />
-        <meta property="og:url" content="https://promanager.in/features" />
-        <meta property="og:image" content="https://promanager.in/logo.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@promanager" />
-        <meta name="twitter:title" content="Payroll Software Features | promanager" />
-        <meta
-          name="twitter:description"
-          content="Automated payroll, attendance integration, employee self-service, and compliance tools with promanager."
-        />
-        <meta name="twitter:image" content="https://promanager.in/logo.png" />
       </Helmet>
-      <div className="container mx-auto px-6 max-w-7xl">
-        {/* Header with Animation */}
+
+      {/* Decorative Background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#6C4CF1]/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/5 to-transparent rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-sm text-[var(--color-text-blue)] uppercase tracking-wider mb-3 font-medium">Benefits</p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-4">
-            Smarter Payroll, Better Business Outcomes
-          </h2>
-          <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+          {/* Benefits Title with Curved Line */}
+          <div className="relative inline-block mb-8">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]"
+            >
+              Benefits
+            </motion.h3>
+            
+            {/* Curved Line SVG */}
+            <motion.svg
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+              className="absolute top-10 left-1/2 -translate-x-1/2 w-32 h-4"
+              viewBox="0 0 130 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.path
+                d="M2 10C30 2, 60 2, 90 10C105 16, 115 10, 128 10"
+                stroke="url(#gradient-benefits)"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="gradient-benefits" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6C4CF1" />
+                  <stop offset="100%" stopColor="#4B2EDB" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
+          </div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl lg:text-5xl font-extrabold text-[var(--color-text-primary)] mb-6"
+          >
+            Smarter Payroll,{" "}
+            <span className="bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+              Better Business Outcomes
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto"
+          >
             Drive efficiency, compliance, and employee satisfaction with intelligent, automated payroll management tools.
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="grid lg:grid-cols-3 gap-12 items-start max-w-7xl mx-auto">
           {/* Left Column - Benefits 1-3 */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {benefits.slice(0, 3).map((benefit, index) => {
-              const IconComponent = benefit.icon;
+              const Icon = benefit.icon;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.2,
-                    ease: "easeOut"
-                  }}
+                  transition={{ duration: 0.8, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 group"
+                  className="group"
                 >
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
                     <motion.div
-                      className="w-12 h-12 bg-[var(--color-blue-darker)] hover:bg-[var(--color-blue-darkest)] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 border border-[var(--color-border-primary)]"
-                      whileHover={{
-                        scale: 1.15,
-                        rotate: 10,
-                        transition: { duration: 0.3 }
-                      }}
+                      whileHover={{ scale: 1.15, rotate: 10 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex-shrink-0 mt-1"
                     >
-                      <IconComponent className="h-5 w-5 text-[var(--color-text-white)]" />
+                      <div className="relative w-14 h-14">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
+                        <div className="absolute inset-0.5 bg-white rounded-2xl flex items-center justify-center">
+                          <div className="w-12 h-12 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded-xl flex items-center justify-center">
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                      </div>
                     </motion.div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-text-blue)] transition-colors duration-300">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                      {benefit.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="space-y-2 flex-1">
+                      <h3 className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#6C4CF1] transition-colors duration-300">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               );
             })}
           </div>
 
-          {/* Center Column - Professional Photo with Animation */}
+          {/* Center Column - Image */}
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
             className="flex justify-center"
           >
             <div className="relative">
-              {/* Background decorative elements with animation */}
+              {/* Decorative Elements */}
               <motion.div
-                className="absolute -top-4 -left-4 w-24 h-24 bg-[var(--color-blue-lighter)] rounded-full opacity-60"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.6, 0.8, 0.6]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-[#6C4CF1]/30 to-transparent rounded-full blur-2xl"
               />
               <motion.div
-                className="absolute -bottom-6 -right-6 w-16 h-16 bg-[var(--color-blue-light)] rounded-full opacity-60"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.6, 0.9, 0.6]
-                }}
-                transition={{
-                  duration: 3,
-                  delay: 1,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.9, 0.6] }}
+                transition={{ duration: 3, delay: 1, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -right-6 w-20 h-20 bg-gradient-to-br from-[#4B2EDB]/30 to-transparent rounded-full blur-2xl"
               />
 
-              {/* Main image container */}
+              {/* Main Image */}
               <motion.div
-                className="relative w-80 h-96 bg-[var(--color-bg-card)] rounded-2xl overflow-hidden shadow-2xl border border-[var(--color-border-primary)]"
-                whileHover={{
-                  scale: 1.02,
-                  rotateY: 5,
-                  transition: { duration: 0.4 }
-                }}
+                whileHover={{ scale: 1.02, rotateY: 5 }}
+                transition={{ duration: 0.4 }}
+                className="relative h-96  "
               >
                 <img
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80"
-                  alt="Payroll software professional dashboard"
-                  className="w-full h-full object-cover object-center"
+                  src="../../../../public/images/Smarter-Payroll.png"
+                  alt="Payroll Dashboard"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-blue-darkest)] via-transparent to-transparent opacity-30"></div>
               </motion.div>
 
-              {/* Floating elements with animation */}
+              {/* Floating Shapes */}
               <motion.div
-                className="absolute top-12 -right-8 w-6 h-6 bg-[var(--color-blue)] rounded opacity-70"
-                animate={{
-                  y: [-5, 5, -5],
-                  rotate: [0, 180, 360]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={{ y: [-5, 5, -5], rotate: [0, 180, 360] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-12 -right-8 w-6 h-6 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded opacity-70"
               />
               <motion.div
-                className="absolute bottom-20 -left-6 w-4 h-4 bg-[var(--color-blue-light)] rounded opacity-70"
-                animate={{
-                  y: [5, -5, 5],
-                  x: [-2, 2, -2]
-                }}
-                transition={{
-                  duration: 3,
-                  delay: 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                animate={{ y: [5, -5, 5], x: [-2, 2, -2] }}
+                transition={{ duration: 3, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-20 -left-6 w-4 h-4 bg-gradient-to-br from-[#4B2EDB] to-[#6C4CF1] rounded opacity-70"
               />
             </div>
           </motion.div>
 
           {/* Right Column - Benefits 4-6 */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {benefits.slice(3, 6).map((benefit, index) => {
-              const IconComponent = benefit.icon;
+              const Icon = benefit.icon;
               return (
                 <motion.div
                   key={index + 3}
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.2,
-                    ease: "easeOut"
-                  }}
+                  transition={{ duration: 0.8, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 group"
+                  className="group"
                 >
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
                     <motion.div
-                      className="w-12 h-12 bg-[var(--color-blue-darker)] hover:bg-[var(--color-blue-darkest)] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 border border-[var(--color-border-primary)]"
-                      whileHover={{
-                        scale: 1.15,
-                        rotate: -10,
-                        transition: { duration: 0.3 }
-                      }}
+                      whileHover={{ scale: 1.15, rotate: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex-shrink-0 mt-1"
                     >
-                      <IconComponent className="h-5 w-5 text-[var(--color-text-white)]" />
+                      <div className="relative w-14 h-14">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
+                        <div className="absolute inset-0.5 bg-white rounded-2xl flex items-center justify-center">
+                          <div className="w-12 h-12 bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] rounded-xl flex items-center justify-center">
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                      </div>
                     </motion.div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-text-blue)] transition-colors duration-300">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                      {benefit.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="space-y-2 flex-1">
+                      <h3 className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[#6C4CF1] transition-colors duration-300">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               );

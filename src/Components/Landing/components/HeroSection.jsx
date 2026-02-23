@@ -1,165 +1,275 @@
 import { Button } from "../ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroImage from "../assets/hero-image.jpg";
+import { ArrowRight, Play, Sparkles, TrendingUp, Users, Shield } from "lucide-react";
+import heroImage from "../../../../public/images/ProManager.png";
 import React from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-[var(--color-bg-gradient-start)] via-[var(--color-blue-lightest)] to-[var(--color-blue-lighter)]">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-gradient-start)] via-[var(--color-blue-lightest)] to-[var(--color-blue-lighter)]">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-[var(--color-blue-light)] to-transparent rounded-full blur-3xl opacity-20"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, -90, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-[var(--color-blue)] to-transparent rounded-full blur-3xl opacity-20"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
+            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center px-4 py-2 bg-[var(--color-bg-secondary-30)] text-[var(--color-text-primary)] rounded-full text-sm font-medium border border-[var(--color-border-primary)] backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[var(--color-blue-lightest)] via-white to-[var(--color-blue-lightest)] rounded-full border-2 border-[var(--color-blue-light)] shadow-lg backdrop-blur-sm"
             >
-              Payroll Made Simple
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+               
+              </motion.div>
+              <span className="text-sm font-bold bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] bg-clip-text text-transparent">
+                Payroll Made Simple
+              </span>
             </motion.div>
 
-            <div className="space-y-6">
+            {/* Main Heading */}
+            <div className="space-y-4">
               <motion.h1
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl lg:text-6xl font-bold leading-tight text-[var(--color-text-primary)]"
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight"
               >
-                promanager –{" "}
-                <span className="bg-[var(--color-blue-darker)] bg-clip-text text-transparent">
-                  An Ultimate Payroll Software
-                </span>
+                <motion.span 
+                  className="block text-[var(--color-text-primary)] mb-2"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  ProManager
+                </motion.span>
+                <motion.span 
+                  className="block bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  Ultimate Payroll
+                </motion.span>
+                <motion.span 
+                  className="block bg-gradient-to-r from-[#4B2EDB] to-[#6C4CF1] bg-clip-text text-transparent"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  Software
+                </motion.span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-lg"
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="text-lg sm:text-xl text-[var(--color-text-secondary)] leading-relaxed max-w-xl"
               >
-                Automate and simplify payroll — from salary calculations and tax compliance
-                to attendance, leave, and employee benefits — with a secure, scalable, and
-                user-friendly cloud platform built for modern businesses and growing teams.
+                Automate payroll, attendance, and compliance with our powerful cloud platform. 
+                <span className="font-semibold text-[var(--color-blue-dark)]"> Built for modern businesses.</span>
               </motion.p>
             </div>
 
+            {/* Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Button
-                  variant="hero"
                   size="lg"
-                  className="px-8 py-6 text-base bg-[var(--color-blue-darker)] hover:bg-[var(--color-blue-darkest)] text-[var(--color-text-white)] shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group px-8 py-7 text-base bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] hover:from-[var(--color-blue-dark)] hover:to-[var(--color-blue-darker)] text-white shadow-2xl hover:shadow-[var(--color-blue)]/50 transition-all duration-300 font-bold rounded-xl"
                 >
-                  Get Started Now
+                  Get Started Free
                   <motion.div
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="inline-block ml-2"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="h-5 w-5" />
                   </motion.div>
                 </Button>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Button
-                  variant="outline"
                   size="lg"
-                  className="px-8 py-6 text-base border-[var(--color-border-primary)] text-[var(--color-text-primary)] hover:bg-[var(--color-bg-hover)] hover:border-[var(--color-border-focus)] hover:text-[var(--color-text-blue)] transition-all duration-300"
+                  className="group px-8 py-7 text-base bg-white border-2 border-[var(--color-blue)] text-[var(--color-blue-dark)] hover:bg-[var(--color-blue-lightest)] transition-all duration-300 font-bold rounded-xl shadow-lg"
                 >
                   <Play className="mr-2 h-5 w-5" />
-                  Learn More
+                  Watch Demo
                 </Button>
               </motion.div>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+              className="flex flex-wrap gap-6 pt-4"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-blue-light)] to-[var(--color-blue)] flex items-center justify-center">
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[var(--color-text-primary)]">100+</p>
+                  <p className="text-xs text-[var(--color-text-secondary)]">Companies</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-success)] to-[var(--color-success-dark)] flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[var(--color-text-primary)]">99.9%</p>
+                  <p className="text-xs text-[var(--color-text-secondary)]">Uptime</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-blue-dark)] to-[var(--color-blue-darker)] flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[var(--color-text-primary)]">Secure</p>
+                  <p className="text-xs text-[var(--color-text-secondary)]">Encrypted</p>
+                </div>
+              </div>
             </motion.div>
           </div>
 
           {/* Right Content - Hero Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.3 }}
             className="relative"
           >
+            {/* Main Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              whileHover={{ scale: 1.02 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+              whileHover={{ scale: 1.02, rotateY: 5 }}
+              transition={{ duration: 0.3 }}
+              className="relatives  overflow-hidden "
+              style={{ transformStyle: 'preserve-3d' }}
             >
+              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-blue)]/20 to-transparent z-10" />
               <img
                 src={heroImage}
-                alt="Payroll software dashboard showcasing salary, compliance, and workforce insights"
+                alt="ProManager Dashboard"
                 className="w-full h-auto object-cover"
               />
             </motion.div>
 
-            {/* Floating Stats */}
+            {/* Floating Card 1 - Bottom Left */}
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.8,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.3 }
-              }}
-              className="absolute -bottom-6 -left-6 bg-[var(--color-bg-card)] border border-[var(--color-border-primary)] rounded-xl p-4 shadow-lg backdrop-blur-sm"
+              transition={{ duration: 0.8, delay: 1 }}
+              whileHover={{ y: -10, scale: 1.05 }}
+              className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-5 shadow-2xl border-2 border-[var(--color-blue-light)] backdrop-blur-sm"
             >
-              <div className="flex items-center space-x-3">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 1,
-                    type: "spring",
-                    stiffness: 200
-                  }}
-                  className="w-12 h-12 bg-[var(--color-blue-lightest)] rounded-full flex items-center justify-center"
-                >
-                  <span className="text-[var(--color-blue)] font-bold text-lg">100+</span>
-                </motion.div>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-blue-dark)] flex items-center justify-center">
+                  <motion.span 
+                    className="text-white font-black text-xl"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    100+
+                  </motion.span>
+                </div>
                 <div>
-                  <motion.p
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 1.1 }}
-                    className="font-semibold text-[var(--color-text-primary)]"
-                  >
-                    Businesses Empowered
-                  </motion.p>
-                  <motion.p
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
-                    className="text-sm text-[var(--color-text-secondary)]"
-                  >
-                    With Smarter Payroll
-                  </motion.p>
+                  <p className="font-bold text-[var(--color-text-primary)] text-lg">Businesses</p>
+                  <p className="text-sm text-[var(--color-text-secondary)]">Empowered</p>
                 </div>
               </div>
             </motion.div>
+
+            {/* Floating Card 2 - Top Right */}
+            <motion.div
+              initial={{ opacity: 0, y: -50, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              whileHover={{ y: -10, scale: 1.05 }}
+              className="absolute -top-8 -right-8 bg-white rounded-2xl p-5 shadow-2xl border-2 border-[var(--color-success-light)] backdrop-blur-sm"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--color-success)] to-[var(--color-success-dark)] flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-[var(--color-success-dark)] text-2xl">50%</p>
+                  <p className="text-xs text-[var(--color-text-secondary)]">Time Saved</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Decorative Elements */}
+            <motion.div
+              animate={{ 
+                rotate: 360,
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ 
+                duration: 10, 
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute top-1/4 -right-12 w-24 h-24 bg-gradient-to-br from-[var(--color-blue-light)] to-[var(--color-blue)] rounded-full blur-2xl opacity-40"
+            />
+            <motion.div
+              animate={{ 
+                rotate: -360,
+                scale: [1, 1.3, 1]
+              }}
+              transition={{ 
+                duration: 15, 
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute bottom-1/4 -left-12 w-32 h-32 bg-gradient-to-br from-[var(--color-blue)] to-[var(--color-blue-dark)] rounded-full blur-2xl opacity-30"
+            />
           </motion.div>
         </div>
       </div>

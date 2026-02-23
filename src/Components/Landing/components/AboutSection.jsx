@@ -1,163 +1,202 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const stats = [
-  {
-    value: "10000+",
-    label: "Payrolls Processed",
-    desc: "Trusted by businesses to automate and streamline salary, tax, and compliance every month.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    hasImage: true,
-  },
-  {
-    value: "98%",
-    label: "Customer Satisfaction",
-    desc: "Our clients appreciate the accuracy, security, and simplicity promanager delivers in payroll management.",
-    hasImage: false,
-  },
-  {
-    value: "5 Min",
-    label: "Setup & Onboard",
-    desc: "Get your company up and running with promanager in just minutes—no complex setup required.",
-    hasImage: false,
-  },
-  {
-    value: "25+",
-    label: "Industries Served",
-    desc: "From startups to enterprises, promanager powers payroll across multiple sectors and business sizes.",
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    hasImage: true,
-  },
-];
+import { CheckCircle2, TrendingUp, Shield, Zap } from "lucide-react";
 
 const AboutSection = () => {
-  return (
-    <section className="py-20 bg-[var(--color-bg-secondary)]">
-      <div className="container mx-auto px-4">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12 lg:mb-16 space-y-6 lg:space-y-0"
-        >
-          <div className="lg:w-48 lg:ml-8">
-            <div className="px-4 py-2 rounded-3xl inline-block bg-[var(--color-bg-gray-light)]">
-              <h2 className="text-sm font-bold text-[var(--color-text-primary)]">
-                About promanager
-              </h2>
-            </div>
-          </div>
-          <div className="flex-1 lg:max-w-4xl flex lg:text-end">
-            <h1 className="text-xl md:text-2xl font-bold leading-tight text-[var(--color-text-primary)]">
-              At our core, we believe that seamless payroll builds stronger teams. 
-              That's why we created{" "}
-              <span className="text-[var(--color-text-secondary)]">
-                promanager — an ultimate payroll software designed to simplify every aspect of workforce pay, 
-                from salary and compliance to attendance, leave, and employee benefits.
-              </span>
-            </h1>
-          </div>
-        </motion.div>
+  const features = [
+    {
+      icon: CheckCircle2,
+      title: "100% Accurate",
+      desc: "Automated calculations ensure error-free payroll processing"
+    },
+    {
+      icon: TrendingUp,
+      title: "Save 50% Time",
+      desc: "Reduce manual work and focus on growing your business"
+    },
+    {
+      icon: Shield,
+      title: "Secure & Compliant",
+      desc: "Bank-grade security with full tax compliance"
+    },
+    {
+      icon: Zap,
+      title: "Lightning Fast",
+      desc: "Process payroll for 1000+ employees in minutes"
+    }
+  ];
 
-        {/* Stats Grid - Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
+  return (
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-[var(--color-blue-lightest)] relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#6C4CF1]/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/10 to-transparent rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Side - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative order-2 lg:order-1"
+          >
+            <div className="relative">
+              {/* Main Image */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="relative overflow-hidden"
+              >
+                <img
+                  src="../../../../public/images/About-ProManager.png"
+                  alt="ProManager Dashboard"
+                  className="w-full h-auto object-cover"
+                />
+              </motion.div>
+
+              {/* Floating Stats Card */}
+              {/* <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                whileHover={{ y: -10 }}
+                className="absolute -bottom-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl border-2 border-[#6C4CF1]/20"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] flex items-center justify-center">
+                    <motion.span
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="text-white font-black text-2xl"
+                    >
+                      10K+
+                    </motion.span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[var(--color-text-primary)] text-xl">Payrolls</p>
+                    <p className="text-sm text-[var(--color-text-secondary)]">Processed Monthly</p>
+                  </div>
+                </div>
+              </motion.div> */}
+
+             
+            </div>
+          </motion.div>
+
+          {/* Right Side - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8 order-1 lg:order-2"
+          >
+            {/* Badge with Curved Line */}
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-block mb-6"
+              >
+                <span className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]">
+                  About ProManager
+                </span>
+              </motion.div>
+              
+              {/* Curved Line SVG under badge */}
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                className="absolute top-10 left-0 w-56 h-4"
+                viewBox="0 0 220 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <motion.path
+                  d="M2 10C50 2, 100 2, 150 10C180 16, 200 10, 218 10"
+                  stroke="url(#gradient)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#6C4CF1" />
+                    <stop offset="100%" stopColor="#4B2EDB" />
+                  </linearGradient>
+                </defs>
+              </motion.svg>
+            </div>
+
+            {/* Title */}
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
-              className={`relative rounded-3xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl ${
-                stat.hasImage 
-                  ? "border border-[var(--color-border-primary)] bg-[var(--color-bg-secondary)] h-64 md:h-80" 
-                  : "bg-[var(--color-blue-darker)] hover:bg-[var(--color-blue-darkest)] h-64 md:h-80"
-              }`}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl lg:text-5xl font-extrabold text-[var(--color-text-primary)] leading-tight mb-6"
             >
-              {/* With image (responsive layout) */}
-              {stat.hasImage ? (
-                <div className="absolute inset-0 flex flex-col md:flex-row">
-                  <div className="flex-1 p-4 md:p-8 flex flex-col justify-center bg-[var(--color-bg-primary)]">
-                    <motion.div 
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.6, delay: i * 0.2 + 0.3 }}
-                      viewport={{ once: true }}
-                      className="text-4xl md:text-7xl font-bold text-[var(--color-text-primary)] mb-2 md:mb-4"
-                    >
-                      {stat.value}
-                    </motion.div>
-                    <motion.h3 
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: i * 0.2 + 0.4 }}
-                      viewport={{ once: true }}
-                      className="text-lg md:text-2xl font-bold text-[var(--color-text-primary)] mb-1 md:mb-3"
-                    >
-                      {stat.label}
-                    </motion.h3>
-                    <motion.p 
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: i * 0.2 + 0.5 }}
-                      viewport={{ once: true }}
-                      className="text-[var(--color-text-secondary)] text-sm md:text-base leading-relaxed pr-0 md:pr-4 line-clamp-3 md:line-clamp-none"
-                    >
-                      {stat.desc}
-                    </motion.p>
-                  </div>
-                  <div className="w-full h-32 md:w-72 md:h-full">
-                    <motion.img
-                      initial={{ scale: 1.1, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.8, delay: i * 0.2 + 0.2 }}
-                      viewport={{ once: true }}
-                      src={stat.image}
-                      alt={stat.label}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                    />
-                  </div>
-                </div>
-              ) : (
-                // Without image (centered content)
-                <div className="p-4 md:p-8 flex flex-col justify-center text-center h-full">
-                  <motion.div 
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: i * 0.2 + 0.3 }}
+              Simplify Payroll,{" "}
+              <span className="bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+                Empower Teams
+              </span>
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg text-[var(--color-text-secondary)] leading-relaxed"
+            >
+              At our core, we believe that seamless payroll builds stronger teams. 
+              That's why we created <span className="font-semibold text-[#6C4CF1]">ProManager</span> — an ultimate payroll software designed to simplify every aspect of workforce pay, 
+              from salary and compliance to attendance, leave, and employee benefits.
+            </motion.p>
+
+            {/* Features Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
+            >
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-7xl font-bold text-[var(--color-text-white)] mb-2 md:mb-4"
+                    transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[var(--color-border-primary)] shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    {stat.value}
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[var(--color-text-primary)] mb-1">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-[var(--color-text-secondary)]">
+                        {feature.desc}
+                      </p>
+                    </div>
                   </motion.div>
-                  <motion.h3 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.2 + 0.4 }}
-                    viewport={{ once: true }}
-                    className="text-lg md:text-2xl font-bold text-[var(--color-text-white)] mb-2 md:mb-4"
-                  >
-                    {stat.label}
-                  </motion.h3>
-                  <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.2 + 0.5 }}
-                    viewport={{ once: true }}
-                    className="text-[var(--color-text-white-90)] text-sm md:text-base leading-relaxed px-2 md:px-4 line-clamp-4 md:line-clamp-none"
-                  >
-                    {stat.desc}
-                  </motion.p>
-                </div>
-              )}
+                );
+              })}
             </motion.div>
-          ))}
+          </motion.div>
         </div>
       </div>
     </section>
