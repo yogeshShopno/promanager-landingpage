@@ -5,70 +5,76 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 
 const AboutPage = () => {
     return (
-        <div className="min-h-screen bg-[var(--color-bg-secondary)]">
+        <div className="min-h-screen bg-white">
             <Helmet>
-                {/* ✅ Title & Meta */}
-                <title>About promanager | Payroll & Attendance Software</title>
+                <title>About ProManager | Payroll & Attendance Software</title>
                 <meta
                     name="description"
-                    content="Learn about promanager (official payroll & attendance software). Discover our mission, vision, and commitment to simplifying payroll for modern businesses worldwide."
+                    content="Learn about ProManager (official payroll & attendance software). Discover our mission, vision, and commitment to simplifying payroll for modern businesses worldwide."
                 />
                 <link rel="canonical" href="https://promanager.in/about" />
-
-                {/* ✅ Keywords */}
-                <meta
-                    name="keywords"
-                    content="About promanager, Sync Wage, Payroll Software Company, HR Tech, SaaS Payroll, Attendance Management"
-                />
-
-                {/* ✅ Open Graph (Facebook/LinkedIn) */}
-                <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="promanager" />
-                <meta property="og:title" content="About promanager | Payroll & Attendance Software" />
-                <meta
-                    property="og:description"
-                    content="Discover promanager – the SaaS payroll platform built by experts to simplify compliance, automate salary processing, and empower modern businesses."
-                />
-                <meta property="og:url" content="https://promanager.in/about" />
-                <meta property="og:image" content="https://promanager.in/logo.png" />
-
-                {/* ✅ Twitter Card */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@promanager" />
-                <meta name="twitter:title" content="About promanager | Payroll & Attendance Software" />
-                <meta
-                    name="twitter:description"
-                    content="Learn more about promanager (not Syncwave) – official payroll & attendance management software built for accuracy, compliance, and trust."
-                />
-                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
-            {/* Hero About Section */}
-            <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-bg-gradient-start)] to-[var(--color-bg-gradient-end)]">
-                <div className="container mx-auto max-w-7xl text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="inline-block bg-[var(--color-cell-p-bg)] text-[var(--color-cell-p-text)] px-4 py-2 rounded-full text-sm font-medium mb-6"
-                    >
-                        About promanager
-                    </motion.div>
+
+            {/* Hero Section */}
+            <section className="py-20 px-4 bg-gradient-to-br from-[#6C4CF1] via-[#5b3dd9] to-[#4B2EDB] text-white relative overflow-hidden">
+                {/* Decorative Background */}
+                <div className="absolute inset-0 opacity-10">
+                    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="about-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <circle cx="30" cy="30" r="1.5" fill="white" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#about-grid)" />
+                    </svg>
+                </div>
+
+                <div className="container mx-auto max-w-7xl text-center relative z-10">
+                    {/* Title with Curved Line */}
+                    <div className="relative inline-block mb-8">
+                        <motion.h3
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-xl lg:text-2xl font-bold"
+                        >
+                            About ProManager
+                        </motion.h3>
+                        
+                        <motion.svg
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                            className="absolute top-8 left-1/2 -translate-x-1/2 w-48 h-4"
+                            viewBox="0 0 190 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <motion.path
+                                d="M2 10C45 2, 90 2, 135 10C160 16, 175 10, 188 10"
+                                stroke="white"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                opacity="0.6"
+                            />
+                        </motion.svg>
+                    </div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl md:text-6xl font-bold text-[var(--color-text-primary)] mb-6"
+                        className="text-4xl md:text-6xl font-extrabold mb-6"
                     >
-                        Empowering Your <br />
-                        <span className="text-[var(--color-blue)]">Payroll Journey</span>
+                        Empowering Your{" "}
+                        <span className="text-white/90">Payroll Journey</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-12"
+                        className="text-xl text-white/80 max-w-3xl mx-auto"
                     >
                         Transform your payroll management with innovative solutions designed to simplify processes, ensure accuracy, and save time for modern businesses.
                     </motion.p>
@@ -78,10 +84,10 @@ const AboutPage = () => {
             <AboutSection />
 
             {/* Detailed About Section */}
-            <section className="py-16 px-4 bg-[var(--color-bg-secondary)]">
+            <section className="py-20 px-4 bg-[var(--color-bg-primary)]">
                 <div className="container mx-auto max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Column - Image and Features */}
+                        {/* Left - Image */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -89,179 +95,180 @@ const AboutPage = () => {
                             viewport={{ once: true }}
                             className="relative"
                         >
-                            {/* Main Image */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                viewport={{ once: true }}
-                                className="rounded-2xl overflow-hidden mb-6 shadow-2xl"
+                                whileHover={{ scale: 1.02 }}
+                                className="rounded-3xl overflow-hidden shadow-2xl"
                             >
                                 <img
                                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Payroll professionals collaborating in modern office"
-                                    className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                                    alt="Payroll professionals"
+                                    className="w-full h-96 object-cover"
                                 />
-                            </motion.div>
-
-                            {/* Feature Overlay Card */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                viewport={{ once: true }}
-                                className="absolute -bottom-6 -right-6 bg-[var(--color-bg-secondary)] rounded-2xl p-6 shadow-xl max-w-xs border border-[var(--color-border-secondary)]"
-                            >
-                                <div className="flex items-center mb-3">
-                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-success)] to-[var(--color-success-medium)] rounded-full flex items-center justify-center mr-3">
-                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <h4 className="font-bold text-[var(--color-text-primary)]">99% Accuracy</h4>
-                                </div>
-                                <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-                                    Businesses trust promanager for error-free payroll processing, delivering reliable results month after month.
-                                </p>
                             </motion.div>
 
                             {/* Floating Stats */}
                             <motion.div
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, delay: 0.6 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="absolute top-6 left-6 bg-[var(--color-bg-secondary-30)] backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border-2 border-[#6C4CF1]/20"
                             >
-                                <div className="text-2xl font-bold text-[var(--color-blue)]">10K+</div>
-                                <div className="text-sm text-[var(--color-text-secondary)]">Satisfied Users</div>
+                                <div className="text-3xl font-black bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+                                    99%
+                                </div>
+                                <div className="text-sm text-[var(--color-text-secondary)]">Accuracy Rate</div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-xl"
+                            >
+                                <div className="text-2xl font-bold text-[#6C4CF1]">10K+</div>
+                                <div className="text-sm text-[var(--color-text-secondary)]">Users</div>
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Column - Content */}
+                        {/* Right - Content */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                viewport={{ once: true }}
-                                className="inline-block bg-[var(--color-blue-lightest)] text-[var(--color-text-blue)] px-3 py-1 rounded-full text-sm font-medium mb-4"
-                            >
-                                About promanager
-                            </motion.div>
-
-                            <motion.h2
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                viewport={{ once: true }}
-                                className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-6 leading-tight"
-                            >
-                                Revolutionizing Payroll Management for
-                                <span className="text-[var(--color-blue)]"> Modern Businesses</span>
-                            </motion.h2>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                viewport={{ once: true }}
-                                className="text-[var(--color-text-secondary)] mb-8 leading-relaxed text-lg"
-                            >
-                                At promanager, we believe that simplified payroll builds stronger businesses.
-                                Our mission is to transform how organizations handle salary disbursement,
-                                compliance, and workforce payments — with speed, accuracy, and transparency.
-                                Founded by payroll experts and technology leaders, promanager delivers a scalable,
-                                user-friendly platform that eliminates manual errors, reduces workload, and enhances employee trust.
-                            </motion.p>
-
-                            {/* Feature Points */}
-                            <div className="space-y-6">
-                                <motion.div
-                                    initial={{ opacity: 0, x: 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.5 }}
+                            {/* Title with Curved Line */}
+                            <div className="relative mb-8">
+                                <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]">
+                                    Our Mission
+                                </h3>
+                                
+                                <motion.svg
+                                    initial={{ pathLength: 0, opacity: 0 }}
+                                    whileInView={{ pathLength: 1, opacity: 1 }}
                                     viewport={{ once: true }}
-                                    className="flex items-start group hover:bg-[var(--color-blue-lightest)] p-4 rounded-xl transition-colors duration-300"
+                                    transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                    className="absolute top-10 left-0 w-40 h-4"
+                                    viewBox="0 0 160 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-success)] to-[var(--color-success-medium)] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-[var(--color-text-primary)] mb-2 text-lg">
-                                            Scalable for Any Business Size
-                                        </h4>
-                                        <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                                            From small startups to large enterprises, promanager adapts seamlessly
-                                            to your organizational needs and grows alongside your business.
-                                        </p>
-                                    </div>
-                                </motion.div>
-
-                                <motion.div
-                                    initial={{ opacity: 0, x: 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.6 }}
-                                    viewport={{ once: true }}
-                                    className="flex items-start group hover:bg-[var(--color-blue-lightest)] p-4 rounded-xl transition-colors duration-300"
-                                >
-                                    <div className="w-8 h-8 bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                        <svg className="w-5 h-5 text-[var(--color-text-white)]" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-[var(--color-text-primary)] mb-2 text-lg">
-                                            Designed by Payroll Experts
-                                        </h4>
-                                        <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                                            Created by professionals who understand both payroll compliance and modern technology —
-                                            ensuring practical solutions that work in the real world.
-                                        </p>
-                                    </div>
-                                </motion.div>
+                                    <motion.path
+                                        d="M2 10C35 2, 70 2, 105 10C130 16, 145 10, 158 10"
+                                        stroke="url(#gradient-mission)"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                    />
+                                    <defs>
+                                        <linearGradient id="gradient-mission" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stopColor="#6C4CF1" />
+                                            <stop offset="100%" stopColor="#4B2EDB" />
+                                        </linearGradient>
+                                    </defs>
+                                </motion.svg>
                             </div>
 
-                            {/* CTA Buttons */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.7 }}
-                                viewport={{ once: true }}
-                                className="flex flex-wrap gap-4 mt-8"
-                            >
-                                <button className="bg-[var(--color-blue)] hover:bg-[var(--color-blue-dark)] text-[var(--color-text-white)] px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
-                                    Get Started Today
-                                </button>
-                                <button className="border-2 border-[var(--color-border-secondary)] hover:border-[var(--color-blue)] text-[var(--color-text-secondary)] hover:text-[var(--color-blue)] px-8 py-3 rounded-xl font-semibold transition-colors duration-300">
-                                    Learn More
-                                </button>
-                            </motion.div>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-text-primary)] mb-6 leading-tight">
+                                Revolutionizing Payroll for{" "}
+                                <span className="bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+                                    Modern Businesses
+                                </span>
+                            </h2>
+
+                            <p className="text-[var(--color-text-secondary)] mb-8 leading-relaxed text-lg">
+                                At ProManager, we believe that simplified payroll builds stronger businesses. Our mission is to transform how organizations handle salary disbursement, compliance, and workforce payments — with speed, accuracy, and transparency.
+                            </p>
+
+                            {/* Feature Points */}
+                            <div className="space-y-4">
+                                {[
+                                    { title: "Scalable for Any Business Size", desc: "From startups to enterprises, ProManager adapts seamlessly to your needs." },
+                                    { title: "Designed by Payroll Experts", desc: "Created by professionals who understand compliance and modern technology." }
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, x: 30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: i * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="flex items-start gap-3 p-4 rounded-xl hover:bg-[#6C4CF1]/5 transition-colors"
+                                    >
+                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#6C4CF1] to-[#4B2EDB] flex items-center justify-center flex-shrink-0 mt-1">
+                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-[var(--color-text-primary)] mb-1">{item.title}</h4>
+                                            <p className="text-sm text-[var(--color-text-secondary)]">{item.desc}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Team/Values Section */}
-            <section className="py-16 px-4 bg-[var(--color-bg-primary)]">
-                <div className="container mx-auto max-w-7xl">
+            {/* Vision Section */}
+            <section className="py-20 px-4 bg-gradient-to-br from-[#6C4CF1] via-[#5b3dd9] to-[#4B2EDB] text-white relative overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 opacity-10">
+                    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="vision-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <motion.circle 
+                                    cx="30" 
+                                    cy="30" 
+                                    r="1.5" 
+                                    fill="white"
+                                    animate={{ opacity: [0.3, 0.8, 0.3] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#vision-grid)" />
+                    </svg>
+                </div>
+
+                <div className="container mx-auto max-w-7xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-12"
+                        className="text-center mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">Our Vision</h2>
-                        <p className="text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                            Built by a dedicated team of payroll specialists and tech innovators with a passion for simplifying payroll worldwide.
+                        {/* Title with Curved Line */}
+                        <div className="relative inline-block mb-8">
+                            <h2 className="text-2xl lg:text-3xl font-bold">
+                                Our Vision
+                            </h2>
+                            
+                            <motion.svg
+                                initial={{ pathLength: 0, opacity: 0 }}
+                                whileInView={{ pathLength: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                className="absolute top-10 left-1/2 -translate-x-1/2 w-36 h-4"
+                                viewBox="0 0 140 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <motion.path
+                                    d="M2 10C30 2, 60 2, 90 10C110 16, 125 10, 138 10"
+                                    stroke="white"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    opacity="0.6"
+                                />
+                            </motion.svg>
+                        </div>
+
+                        <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                            Built by payroll specialists and tech innovators with a passion for simplifying payroll worldwide.
                         </p>
                     </motion.div>
 
@@ -270,56 +277,66 @@ const AboutPage = () => {
                             {
                                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                                 title: "Innovation First",
-                                description: "We continuously evolve promanager with the latest payroll technology trends and valuable client feedback."
+                                description: "We continuously evolve with the latest payroll technology trends and client feedback.",
+                                number: "01"
                             },
                             {
                                 image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                                 title: "Business-Centric",
-                                description: "Every feature we build is designed with your business needs in mind — making payroll efficient, accurate, and stress-free."
+                                description: "Every feature is designed with your business needs in mind — efficient and stress-free.",
+                                number: "02"
                             },
                             {
                                 image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                                 title: "Global Support",
-                                description: "Our dedicated support team ensures you're never alone in your payroll journey — assistance whenever you need it."
+                                description: "Our dedicated team ensures you're never alone in your payroll journey.",
+                                number: "03"
                             }
                         ].map((card, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: i * 0.2 }}
+                                transition={{ duration: 0.8, delay: i * 0.15 }}
                                 viewport={{ once: true }}
-                                className="group"
+                                whileHover={{ y: -10 }}
+                                className="group relative"
                             >
-                                <motion.div
-                                    whileHover={{ y: -10 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="rounded-2xl overflow-hidden mb-6 shadow-lg group-hover:shadow-2xl transition-shadow duration-300"
-                                >
-                                    <img
-                                        src={card.image}
-                                        alt={card.title}
-                                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                </motion.div>
-                                <motion.h3
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 0.6, delay: i * 0.2 + 0.3 }}
-                                    viewport={{ once: true }}
-                                    className="text-xl font-bold text-[var(--color-text-primary)] mb-2"
-                                >
-                                    {card.title}
-                                </motion.h3>
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 0.6, delay: i * 0.2 + 0.4 }}
-                                    viewport={{ once: true }}
-                                    className="text-[var(--color-text-secondary)]"
-                                >
-                                    {card.description}
-                                </motion.p>
+                                {/* Card */}
+                                <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+                                    {/* Image */}
+                                    <div className="relative h-56 overflow-hidden">
+                                        <motion.img
+                                            whileHover={{ scale: 1.1 }}
+                                            transition={{ duration: 0.5 }}
+                                            src={card.image}
+                                            alt={card.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                        
+                                        {/* Number Badge */}
+                                        <motion.div
+                                            initial={{ scale: 0 }}
+                                            whileInView={{ scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.5, delay: i * 0.15 + 0.3, type: "spring" }}
+                                            className="absolute top-4 right-4 w-12 h-12 bg-white text-[#6C4CF1] rounded-xl flex items-center justify-center font-black text-lg shadow-xl"
+                                        >
+                                            {card.number}
+                                        </motion.div>
+                                    </div>
+                                    
+                                    {/* Content */}
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-bold mb-3 group-hover:text-white/90 transition-colors">
+                                            {card.title}
+                                        </h3>
+                                        <p className="text-white/70 leading-relaxed">
+                                            {card.description}
+                                        </p>
+                                    </div>
+                                </div>
                             </motion.div>
                         ))}
                     </div>

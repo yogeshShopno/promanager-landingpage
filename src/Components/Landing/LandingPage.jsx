@@ -1,6 +1,7 @@
 // Components/Landing/LandingPage.jsx
 import { Helmet } from "@dr.pogodin/react-helmet";
 import HeroSection from "../Landing/components/HeroSection";
+import TrustedBy from "../Landing/components/TrustedBy";
 import FeaturesSection from "../Landing/components/FeaturesSection";
 import StatsSection from "../Landing/components/StatsSection";
 import AboutSection from "../Landing/components/AboutSection";
@@ -58,6 +59,7 @@ const LandingPage = () => {
 
             <main>
                 <HeroSection />
+                <TrustedBy />
                 {/* <StatsSection /> */}
                 <AboutSection />
                 <ServicesSection />

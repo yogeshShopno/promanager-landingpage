@@ -122,14 +122,45 @@ const TestimonialSection = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
-          <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+          {/* Title with Curved Line */}
+          <div className="relative mb-8">
+            <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]">
+              Testimonials
+            </h3>
+            
+            {/* Curved Line SVG */}
+            <motion.svg
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+              className="absolute top-10 left-1/2 -translate-x-1/2 w-44 h-4"
+              viewBox="0 0 180 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.path
+                d="M2 10C40 2, 80 2, 120 10C145 16, 165 10, 178 10"
+                stroke="url(#gradient-testimonials)"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="gradient-testimonials" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6C4CF1" />
+                  <stop offset="100%" stopColor="#4B2EDB" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
-            What our users say
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--color-text-primary)] mb-4">
+            What Our{" "}
+            <span className="bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
+              Users Say
+            </span>
           </h2>
-          <p className="text-center mt-5 opacity-75">
+          <p className="text-center text-lg text-[var(--color-text-secondary)]">
             See what our customers have to say about us.
           </p>
         </motion.div>

@@ -51,18 +51,18 @@
     /* Border Colors */
     --color-border-primary: #E2E8F0;
     --color-border-secondary: #d1d5db;
-    --color-border-focus: #3b82f6;
+    --color-border-focus: #6C4CF1;
     --color-border-error: #ef4444;
     --color-border-divider: #e5e7eb;
 
-    /* Blue Color Variants */
-    --color-blue-lightest: #eff6ff;
-    --color-blue-lighter: #dbeafe;
-    --color-blue-light: #93c5fd;
-    --color-blue: #3b82f6;
-    --color-blue-dark: #2563eb;
-    --color-blue-darker: #1d4ed8;
-    --color-blue-darkest: #1e40af;
+    /* Purple Color Variants (Primary Brand Colors) */
+    --color-blue-lightest: #f5f3ff;
+    --color-blue-lighter: #ede9fe;
+    --color-blue-light: #a78bfa;
+    --color-blue: #6C4CF1;
+    --color-blue-dark: #5b3dd9;
+    --color-blue-darker: #6C4CF1;
+    --color-blue-darkest: #3d24b8;
 
     /* Text Colors */
     --color-text-primary: #1f2937;
@@ -70,7 +70,7 @@
     --color-text-muted: #9ca3af;
     --color-text-white: #ffffff;
     --color-text-white-90: #e6e6e6;
-    --color-text-blue: #2563eb;
+    --color-text-blue: #6C4CF1;
     --color-text-error: #dc2626;
     --color-text-success: #047857;
 
@@ -104,12 +104,12 @@
 
     /* Scrollbar Colors */
     --color-scrollbar-track: #f1f5f9;
-    --color-scrollbar-thumb: linear-gradient(45deg, var(--color-blue), #6366f1);
-    --color-scrollbar-thumb-hover: linear-gradient(45deg, var(--color-blue-dark), #4f46e5);
+    --color-scrollbar-thumb: linear-gradient(45deg, #6C4CF1, #4B2EDB);
+    --color-scrollbar-thumb-hover: linear-gradient(45deg, #5b3dd9, #3d24b8);
 
     --color-modal-bg: #ffffff;
     --color-modal-overlay: rgba(0, 0, 0, 0.5);
-    --color-modal-header-bg: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --color-modal-header-bg: linear-gradient(135deg, #6C4CF1 0%, #4B2EDB 100%);
     --color-modal-content-bg: #ffffff;
     --color-modal-footer-bg: #f8fafc;
 
@@ -128,7 +128,7 @@
     --color-status-error-border: #fecaca;
 
     /* Icon backgrounds */
-    --color-icon-blue-bg: #eff6ff;
+    --color-icon-blue-bg: #f5f3ff;
     --color-icon-success-bg: #ecfdf5;
     --color-icon-warning-bg: #fefce8;
     --color-icon-error-bg: #fef2f2;
@@ -166,11 +166,11 @@
     --color-code-wo-text: var(--color-text-secondary);
     --color-code-wo-border: var(--color-border-secondary);
 
-    --color-code-h-bg: #eff6ff;
-    /* blue-50 */
-    --color-code-h-text: #1d4ed8;
-    /* blue-700 */
-    --color-code-h-border: #dbeafe;
+    --color-code-h-bg: #f5f3ff;
+    /* purple-50 */
+    --color-code-h-text: #4B2EDB;
+    /* purple-700 */
+    --color-code-h-border: #ede9fe;
     /* blue-200 */
 
 
@@ -210,11 +210,11 @@
     --color-cell-wo-border: #9ca3af;
     /* gray-400 */
 
-    --color-cell-h-bg: #dbeafe;
-    /* blue-100 */
-    --color-cell-h-text: #1e40af;
-    /* blue-800 */
-    --color-cell-h-border: #60a5fa;
+    --color-cell-h-bg: #ede9fe;
+    /* purple-100 */
+    --color-cell-h-text: #3d24b8;
+    /* purple-800 */
+    --color-cell-h-border: #a78bfa;
     /* blue-400 */
 
 
@@ -499,14 +499,14 @@
 
 /* Hover effect on days */
 .react-datepicker__day:hover:not(.react-datepicker__day--disabled) {
-    background-color: var(--color-blue);
+    background-color: #6C4CF1;
     color: #fff;
     cursor: pointer;
 }
 
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
-    background-color: var(--color-blue) !important;
+    background-color: #6C4CF1 !important;
     color: #fff !important;
     font-weight: 600;
     border: none !important;
@@ -596,7 +596,7 @@
 }
 
 .react-datepicker__year-option:hover {
-    background-color: var(--color-blue);
+    background-color: #6C4CF1;
     color: #fff;
 }
 
@@ -649,12 +649,12 @@
 }
 
 .react-datepicker__month-option:hover {
-    background-color: var(--color-blue);
+    background-color: #6C4CF1;
     color: #fff;
 }
 
 .react-datepicker__month-option--selected {
-    background-color: var(--color-blue);
+    background-color: #6C4CF1;
     color: #fff;
     font-weight: 600;
 }
@@ -693,7 +693,7 @@
 
 .react-datepicker__year-dropdown::-webkit-scrollbar-thumb:hover,
 .react-datepicker__month-dropdown::-webkit-scrollbar-thumb:hover {
-    background: var(--color-blue);
+    background: #6C4CF1;
 }
 
 
@@ -716,22 +716,22 @@
     --color-bg-sidebar-to: #18181b;
     --color-border-primary: #27272a;
     --color-border-secondary: #3f3f46;
-    --color-border-focus: #818cf8;
+    --color-border-focus: #a78bfa;
     --color-border-error: #ef4444;
     --color-border-divider: #27272a;
-    --color-blue-lightest: #1e293b;
-    --color-blue-lighter: #334155;
-    --color-blue-light: #64748b;
-    --color-blue: #60a5fa;
-    --color-blue-dark: #3b82f6;
-    --color-blue-darker: #2563eb;
-    --color-blue-darkest: #1d4ed8;
+    --color-blue-lightest: #2e1065;
+    --color-blue-lighter: #4c1d95;
+    --color-blue-light: #a78bfa;
+    --color-blue: #8b5cf6;
+    --color-blue-dark: #7c3aed;
+    --color-blue-darker: #6C4CF1;
+    --color-blue-darkest: #5b21b6;
     --color-text-primary: #f3f4f6;
     --color-text-secondary: #9ca3af;
     --color-text-muted: #ffffff;
     --color-text-white: #ffffff;
     --color-text-white-90: #ffffff;
-    --color-text-blue: #60a5fa;
+    --color-text-blue: #a78bfa;
     --color-text-error: #da4444;
     --color-text-success: #34d399;
     --color-success-light: #166534;
@@ -755,18 +755,18 @@
     --color-shadow-medium: rgba(0, 0, 0, 0.7);
     --color-shadow-dark: rgba(0, 0, 0, 0.9);
     --color-scrollbar-track: #23232a;
-    --color-scrollbar-thumb: #60a5fa;
-    --color-scrollbar-thumb-hover: #3b82f6;
+    --color-scrollbar-thumb: #8b5cf6;
+    --color-scrollbar-thumb-hover: #7c3aed;
     /* Modal specific colors */
     --color-modal-bg: #1e293b;
     --color-modal-overlay: rgba(0, 0, 0, 0.75);
-    --color-modal-header-bg: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    --color-modal-header-bg: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
     --color-modal-content-bg: #1e293b;
     --color-modal-footer-bg: #0f172a;
 
     /* Card backgrounds */
-    --color-card-info-bg: #1e3a8a;
-    --color-card-info-border: #3730a3;
+    --color-card-info-bg: #4c1d95;
+    --color-card-info-border: #6d28d9;
     --color-card-detail-bg: #334155;
     --color-card-detail-border: #475569;
 
@@ -779,7 +779,7 @@
     --color-status-error-border: #dc2626;
 
     /* Icon backgrounds */
-    --color-icon-blue-bg: #1e3a8a;
+    --color-icon-blue-bg: #4c1d95;
     --color-icon-success-bg: #064e3b;
     --color-icon-warning-bg: #451a03;
     --color-icon-error-bg: #7f1d1d;
@@ -815,11 +815,11 @@
     /* gray-300 */
     --color-code-wo-border: #4b5563;
 
-    --color-code-h-bg: #1e3a8a;
-    /* dark blue */
-    --color-code-h-text: #60a5fa;
-    /* light blue */
-    --color-code-h-border: #2563eb;
+    --color-code-h-bg: #4c1d95;
+    /* dark purple */
+    --color-code-h-text: #a78bfa;
+    /* light purple */
+    --color-code-h-border: #7c3aed;
 
     /* CELL_STATUS_COLORS (Grid cells) */
     --color-cell-p-bg: rgba(16, 185, 129, 0.15);
@@ -847,10 +847,10 @@
     --color-cell-wo-text: #d1d5db;
     --color-cell-wo-border: #6b7280;
 
-    --color-cell-h-bg: rgba(37, 99, 235, 0.15);
-    /* soft blue tint */
-    --color-cell-h-text: #60a5fa;
-    --color-cell-h-border: #3b82f6;
+    --color-cell-h-bg: rgba(139, 92, 246, 0.15);
+    /* soft purple tint */
+    --color-cell-h-text: #a78bfa;
+    --color-cell-h-border: #8b5cf6;
 
     /* Disabled state */
     --color-disabled-bg: #374151;

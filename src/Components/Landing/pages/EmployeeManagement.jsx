@@ -1,61 +1,26 @@
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, Users, TrendingUp, Shield, Clock, Award, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import CoreFeaturesSection from "../components/CoreFeaturesSection";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-// Motion Variants
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.2 },
-    },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.4 },
-    },
-};
-
-// Reusable Components
-const StatCard = ({ children, className }) => (
-    <motion.div
-        className={`rounded-2xl p-6 shadow-lg ${className}`}
-        variants={cardVariants}
-        whileHover={{ scale: 1.02, y: -2 }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-    >
-        {children}
-    </motion.div>
-);
-
 const BenefitItem = ({ text, index }) => (
     <motion.div
         className="flex items-start space-x-3"
-        variants={itemVariants}
-        transition={{ delay: 0.7 + index * 0.1 }}
-        whileHover={{ x: 3 }}
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ x: 5 }}
     >
         <motion.div
-            className="w-5 h-5 bg-[var(--color-blue)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-            initial={{ scale: 0.8 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.2, delay: 0.8 + index * 0.1 }}
-            viewport={{ once: true }}
+            className="w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+            whileHover={{ scale: 1.1, rotate: 360 }}
+            transition={{ duration: 0.3 }}
         >
-            <Check className="w-3 h-3 text-[var(--color-text-white)]" />
+            <Check className="w-4 h-4 text-white" strokeWidth={3} />
         </motion.div>
-        <p className="text-[var(--color-text-primary)] text-sm leading-relaxed">{text}</p>
+        <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">{text}</p>
     </motion.div>
 );
 
@@ -70,269 +35,304 @@ const EmployeeManagement = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[var(--color-bg-primary)]">
-            {/* ✅ Helmet for SEO */}
+        <div className="min-h-screen bg-gray-50">
             <Helmet>
                 <title>Employee Management Software | promanager Payroll & HR</title>
-                <meta
-                    name="description"
-                    content="promanager Employee Management Software helps businesses streamline HR, payroll, attendance, compliance, and workforce operations with ease and accuracy."
-                />
+                <meta name="description" content="promanager Employee Management Software helps businesses streamline HR, payroll, attendance, compliance, and workforce operations with ease and accuracy." />
                 <link rel="canonical" href="https://promanager.in/employee-management" />
-                <meta
-                    name="keywords"
-                    content="Employee Management, promanager, Payroll Software, HR Platform, Workforce Management, SaaS HR Software"
-                />
-
-                {/* Open Graph */}
-                <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="promanager" />
-                <meta property="og:title" content="Employee Management Software | promanager" />
-                <meta
-                    property="og:description"
-                    content="Manage payroll, attendance, compliance, and HR with promanager Employee Management Software. Trusted by modern businesses for accuracy and automation."
-                />
-                <meta property="og:url" content="https://promanager.in/employee-management" />
-                <meta property="og:image" content="https://promanager.in/logo.png" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@promanager" />
-                <meta name="twitter:title" content="Employee Management Software | promanager" />
-                <meta
-                    name="twitter:description"
-                    content="Discover promanager Employee Management Software – automate HR, payroll, compliance, and workforce management for modern businesses."
-                />
-                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
-            {/* ================= Hero Section ================= */}
-            <div className="bg-[var(--color-white)]">
-                <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
-                    <motion.div
-                        className="space-y-8"
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
-                        <motion.span
-                            className="inline-block bg-[var(--color-accent-yellow)] text-[var(--color-text-primary)] px-4 py-2 rounded-full text-sm font-medium"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.3, duration: 0.4 }}
-                        >
-                            Payroll & HR Simplified
-                        </motion.span>
 
-                        <motion.h1
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-primary)] leading-tight"
+            {/* Hero Section with Curved Design */}
+            <div className="relative bg-[var(--color-blue)] overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <motion.div
+                        className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                        animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+                        transition={{ duration: 20, repeat: Infinity }}
+                    />
+                    <motion.div
+                        className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                        animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
+                        transition={{ duration: 15, repeat: Infinity }}
+                    />
+                </div>
+
+                <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Content */}
+                        <motion.div
+                            className="space-y-8 z-10"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4, duration: 0.6 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            Streamline Payroll & Workforce Management
-                            <br />
-                            <span className="text-[var(--color-blue)]">with promanager</span>
-                        </motion.h1>
-
-                        <motion.p
-                            className="text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6, duration: 0.6 }}
-                        >
-                            Manage everything from{" "}
-                            <strong>attendance and leave tracking</strong> to{" "}
-                            <strong>payroll, compliance, and employee insights</strong> — all in one
-                            secure, scalable, and intuitive platform built for modern businesses.
-                        </motion.p>
-
-                        <motion.div
-                            className="flex flex-col sm:flex-row gap-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8, duration: 0.6 }}
-                        >
-                            <motion.button
-                                className="bg-[var(--color-blue)] text-[var(--color-text-white)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-blue-dark)] transition-colors"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
+                            <motion.span
+                                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-sm font-medium border border-white/20"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.2 }}
                             >
-                                Get Started
-                            </motion.button>
-                            <motion.button
-                                className="border-2 border-[var(--color-border)] text-[var(--color-text-secondary)] px-8 py-4 rounded-full font-medium hover:border-[var(--color-blue)] hover:text-[var(--color-blue)] transition-colors"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
+                                <Zap className="w-4 h-4" />
+                                Payroll & HR Simplified
+                            </motion.span>
+
+                            <motion.h1
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
                             >
-                                Explore Features
-                            </motion.button>
-                        </motion.div>
-                    </motion.div>
+                                Streamline Your Workforce Management
+                            </motion.h1>
 
-                    {/* Right Visuals */}
-                    <motion.div
-                        className="relative"
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
-                        <motion.div
-                            className="grid grid-cols-2 gap-4"
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            {/* Images + Stats */}
-                            <motion.div
-                                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-                                variants={cardVariants}
-                                whileHover={{ scale: 1.02, rotate: 1 }}
+                            <motion.p
+                                className="text-white text-lg md:text-xl leading-relaxed"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 }}
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=400&q=80"
-                                    alt="Team collaboration"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
-
-                            {/* Active Users Card */}
-                            <StatCard className="bg-[var(--color-white)] border border-[var(--color-border)] flex flex-col items-center justify-center text-center gap-2 p-6 hover:shadow-xl transition-shadow">
-                                <div className="text-4xl font-extrabold text-[var(--color-blue)]">10,000+</div>
-                                <div className="text-base font-semibold text-[var(--color-text-primary)]">
-                                    Active Users
-                                </div>
-                                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
-                                    Trusted daily by professionals worldwide
-                                </p>
-                            </StatCard>
-
-                            {/* Efficiency Card */}
-                            <StatCard className="relative bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] text-[var(--color-text-white)] flex flex-col items-center justify-center text-center gap-2 p-6 hover:shadow-xl transition-shadow overflow-hidden">
-                                {/* Decorative background accent */}
-                                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-
-                                <div className="text-4xl text-[var(--color-text-white)] font-extrabold relative z-10">85%</div>
-                                <div className="text-base text-[var(--color-text-white)] font-semibold relative z-10">
-                                    Higher Efficiency
-                                </div>
-                                <p className="text-sm text-[var(--color-text-white)] relative z-10 leading-relaxed">
-                                    Boost in payroll & HR efficiency
-                                </p>
-                            </StatCard>
-
+                                Manage attendance, payroll, compliance, and employee insights in one powerful platform built for modern businesses.
+                            </motion.p>
 
                             <motion.div
-                                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-                                variants={cardVariants}
-                                whileHover={{ scale: 1.02, rotate: -1 }}
+                                className="flex flex-col sm:flex-row gap-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                                    alt="Professional woman working"
-                                    className="w-full h-full object-cover"
-                                />
+                                <motion.button
+                                    className="bg-white text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    Get Started Free
+                                </motion.button>
+                                <motion.button
+                                    className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    Watch Demo
+                                </motion.button>
                             </motion.div>
                         </motion.div>
-                    </motion.div>
+
+                        {/* Right Stats Cards */}
+                        <motion.div
+                            className="grid grid-cols-2 gap-4 lg:gap-6"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                        >
+                            {[
+                                { icon: Users, label: "Active Users", value: "50K+", color: "from-blue-400 to-blue-600" },
+                                { icon: TrendingUp, label: "Efficiency", value: "95%", color: "from-green-400 to-green-600" },
+                                { icon: Shield, label: "Secure", value: "100%", color: "from-purple-400 to-purple-600" },
+                                { icon: Clock, label: "Time Saved", value: "40hrs", color: "from-orange-400 to-orange-600" },
+                            ].map((stat, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 + index * 0.1 }}
+                                    whileHover={{ y: -5, scale: 1.02 }}
+                                >
+                                    <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                                        <stat.icon className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-white mb-1">{stat.value}</h3>
+                                    <p className="text-white/80 text-sm">{stat.label}</p>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Curved Bottom */}
+                <div className="absolute bottom-0 left-0 right-0">
+                    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+                    </svg>
                 </div>
             </div>
 
-            {/* ================= Benefits Section ================= */}
-            <div className="bg-[var(--color-bg-primary)] py-16">
-                <div className="max-w-6xl mx-auto px-4 md:px-8">
+            {/* Features Section with Curved Title */}
+            <div className="bg-white py-20">
+                <div className="max-w-7xl mx-auto px-4 md:px-8">
+                    {/* Curved Title Section */}
+                    <div className="relative mb-16">
+                        <motion.div
+                            className="text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="inline-block relative">
+                                <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                                    Why Choose <span className="text-[var(--color-blue)]">promanager</span>
+                                </span>
+                                <motion.svg
+                                    initial={{ pathLength: 0, opacity: 0 }}
+                                    whileInView={{ pathLength: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                    className="absolute -bottom-2 left-0 w-64 h-4"
+                                    viewBox="0 0 250 12"
+                                    fill="none"
+                                >
+                                    <motion.path
+                                        d="M2 10C50 2, 100 2, 150 10C180 16, 220 10, 248 10"
+                                        stroke="var(--color-blue)"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                    />
+                                </motion.svg>
+                            </div>
+                            <p className="text-[var(--color-text-secondary)] text-lg mt-6 max-w-2xl mx-auto">
+                                Transform your HR operations with intelligent automation and real-time insights
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: Users,
+                                title: "Employee Management",
+                                desc: "Centralized employee database with complete profiles and history",
+                                gradient: "from-blue-500 to-blue-600"
+                            },
+                            {
+                                icon: Clock,
+                                title: "Attendance Tracking",
+                                desc: "Real-time attendance monitoring with automated reports",
+                                gradient: "from-green-500 to-green-600"
+                            },
+                            {
+                                icon: TrendingUp,
+                                title: "Payroll Automation",
+                                desc: "Accurate salary calculations with compliance management",
+                                gradient: "from-purple-500 to-purple-600"
+                            },
+                            {
+                                icon: Shield,
+                                title: "Data Security",
+                                desc: "Bank-grade encryption with role-based access control",
+                                gradient: "from-red-500 to-red-600"
+                            },
+                            {
+                                icon: Award,
+                                title: "Performance Tracking",
+                                desc: "Monitor employee performance and productivity metrics",
+                                gradient: "from-yellow-500 to-yellow-600"
+                            },
+                            {
+                                icon: Zap,
+                                title: "Quick Integration",
+                                desc: "Seamless integration with existing tools and systems",
+                                gradient: "from-indigo-500 to-indigo-600"
+                            },
+                        ].map((feature, index) => (
+                            <motion.div
+                                key={index}
+                                className="group relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -8 }}
+                            >
+                                <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                                    <feature.icon className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{feature.title}</h3>
+                                <p className="text-[var(--color-text-secondary)] leading-relaxed">{feature.desc}</p>
+                                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform`} />
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Benefits Section with Curved Background */}
+            <div className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 overflow-hidden">
+                {/* Top Curve */}
+                <div className="absolute top-0 left-0 right-0">
+                    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                        <path d="M0 0L60 15C120 30 240 60 360 75C480 90 600 90 720 82.5C840 75 960 60 1080 52.5C1200 45 1320 45 1380 45L1440 45V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0Z" fill="white"/>
+                    </svg>
+                </div>
+
+                <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+                    {/* Curved Title */}
                     <motion.div
-                        className="bg-[var(--color-white)] rounded-3xl shadow-xl overflow-hidden"
-                        initial={{ opacity: 0, y: 50 }}
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className="grid grid-cols-1 lg:grid-cols-2">
-                            {/* Left Image */}
-                            <motion.div
-                                className="relative"
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
+                        <div className="inline-block relative">
+                            <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                                Key <span className="text-[var(--color-blue)]">Benefits</span>
+                            </span>
+                            <motion.svg
+                                initial={{ pathLength: 0, opacity: 0 }}
+                                whileInView={{ pathLength: 1, opacity: 1 }}
                                 viewport={{ once: true }}
+                                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                className="absolute -bottom-2 left-0 w-48 h-4"
+                                viewBox="0 0 190 12"
+                                fill="none"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                                    alt="Team meeting"
-                                    className="w-full h-full object-cover min-h-[400px] sm:min-h-[500px]"
+                                <motion.path
+                                    d="M2 10C50 2, 100 2, 150 10C165 14, 175 10, 188 10"
+                                    stroke="var(--color-blue)"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
                                 />
-                                {/* Success Badge */}
-                                <motion.div
-                                    className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 bg-[var(--color-white)] rounded-xl p-4 shadow-lg max-w-xs"
-                                    initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-                                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.8 }}
-                                    viewport={{ once: true }}
-                                    whileHover={{ scale: 1.02 }}
-                                >
-                                    <div className="flex items-start space-x-3">
-                                        <div className="w-6 h-6 bg-[var(--color-green)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                            <Check className="w-4 h-4 text-[var(--color-text-white)]" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-semibold text-[var(--color-text-white)] text-sm mb-1">
-                                                Committed to Your Long-Term Success
-                                            </h4>
-                                            <p className="text-[var(--color-text-muted)] text-xs leading-relaxed">
-                                                Reliable support, continuous updates, and tools that grow with your business.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            </motion.div>
-
-                            {/* Right Content */}
-                            <motion.div
-                                className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center"
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
-                                viewport={{ once: true }}
-                            >
-                                <div className="space-y-6">
-                                    <span className="text-sm text-[var(--color-blue)] font-medium">
-                                        Why Employee Management Matters
-                                    </span>
-                                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)] leading-tight">
-                                        Efficient Employee Management Drives Team Success
-                                    </h2>
-                                    <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                                        Centralized systems improve accuracy, engagement, and streamline HR
-                                        operations across every department. Modern businesses need tools that
-                                        enhance productivity and employee satisfaction.
-                                    </p>
-                                    <motion.div
-                                        className="space-y-4"
-                                        variants={containerVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true }}
-                                    >
-                                        {benefits.map((benefit, i) => (
-                                            <BenefitItem key={i} text={benefit} index={i} />
-                                        ))}
-                                    </motion.div>
-                                    <motion.button
-                                        className="bg-[var(--color-blue)] text-[var(--color-text-white)] px-8 py-3 rounded-full font-medium hover:bg-[var(--color-blue-dark)] transition-colors inline-block"
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                    >
-                                        Explore Features
-                                    </motion.button>
-                                </div>
-                            </motion.div>
+                            </motion.svg>
                         </div>
                     </motion.div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <motion.div
+                            className="bg-white rounded-3xl p-10 shadow-xl"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="space-y-6">
+                                {benefits.map((benefit, index) => (
+                                    <BenefitItem key={index} text={benefit} index={index} />
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-10 shadow-xl text-white flex flex-col justify-center"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="text-3xl font-bold mb-6">Ready to Transform Your HR?</h3>
+                            <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                                Join thousands of businesses that trust promanager for their workforce management needs.
+                            </p>
+                            <motion.button
+                                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all w-fit"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                Start Free Trial
+                            </motion.button>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
-            {/* ================= Core Features ================= */}
             <CoreFeaturesSection />
         </div>
     );

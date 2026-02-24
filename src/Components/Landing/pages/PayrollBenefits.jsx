@@ -1,352 +1,338 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Shield, Award } from 'lucide-react';
+import { Users, Shield, Award, Check, TrendingUp, Clock, Zap } from 'lucide-react';
 import AccordionDemo from '../components/Accordian';
 import { Helmet } from "@dr.pogodin/react-helmet";
 
+const BenefitItem = ({ text, index }) => (
+    <motion.div
+        className="flex items-start space-x-3"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ x: 5 }}
+    >
+        <motion.div
+            className="w-6 h-6 bg-[var(--color-blue)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+            whileHover={{ scale: 1.1, rotate: 360 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Check className="w-4 h-4 text-white" strokeWidth={3} />
+        </motion.div>
+        <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">{text}</p>
+    </motion.div>
+);
+
 const PayrollBenefits = () => {
-    // Animation variants
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const scaleHover = {
-        scale: 1.05,
-        transition: { duration: 0.3 }
-    };
-
-    const buttonHover = {
-        scale: 1.05,
-        transition: { duration: 0.2 }
-    };
+    const benefits = [
+        "Automated payroll calculations ensure error-free salary processing every time.",
+        "Real-time compliance updates keep you aligned with tax and labor regulations.",
+        "Employee self-service portals reduce HR workload and improve transparency.",
+        "Comprehensive benefits management attracts and retains top talent.",
+        "Detailed analytics provide insights into payroll costs and workforce trends.",
+        "Secure data encryption protects sensitive employee and financial information.",
+    ];
 
     return (
-        <div className="min-h-screen bg-[var(--color-bg-primary)] p-4 sm:p-6 overflow-x-hidden">
-            {/* ✅ Helmet for SEO */}
+        <div className="min-h-screen bg-[var(--color-bg-primary)]">
             <Helmet>
                 <title>Payroll & Benefits Software | promanager</title>
-                <meta
-                    name="description"
-                    content="Discover promanager Payroll & Benefits Software – automate salary disbursement, compliance, tax, and employee perks. Build trust and boost retention."
-                />
+                <meta name="description" content="Discover promanager Payroll & Benefits Software – automate salary disbursement, compliance, tax, and employee perks. Build trust and boost retention." />
                 <link rel="canonical" href="https://promanager.in/payroll-benefits" />
-                <meta
-                    name="keywords"
-                    content="Payroll Benefits, Payroll Software, promanager, Salary Automation, Employee Benefits, Compliance Software, HR SaaS"
-                />
-
-                {/* Open Graph */}
-                <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="promanager" />
-                <meta property="og:title" content="Payroll & Benefits Software | promanager" />
-                <meta
-                    property="og:description"
-                    content="promanager helps businesses with payroll automation, benefits management, and compliance – making employees happier and businesses more efficient."
-                />
-                <meta property="og:url" content="https://promanager.in/payroll-benefits" />
-                <meta property="og:image" content="https://promanager.in/logo.png" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@promanager" />
-                <meta name="twitter:title" content="Payroll & Benefits Software | promanager" />
-                <meta
-                    name="twitter:description"
-                    content="Simplify payroll, compliance, and employee benefits with promanager. The SaaS solution for modern HR."
-                />
-                <meta name="twitter:image" content="https://promanager.in/logo.png" />
             </Helmet>
-            {/* First Section - Workforce Management */}
-            <motion.div
-                className="max-w-7xl mx-auto mb-16"
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-            >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    {/* Left Content */}
-                    <div className="space-y-8">
-                        {/* Main Hero Card */}
+
+            {/* Hero Section with Curved Design */}
+            <div className="relative bg-[var(--color-blue)] overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <motion.div
+                        className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                        animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+                        transition={{ duration: 20, repeat: Infinity }}
+                    />
+                    <motion.div
+                        className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                        animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
+                        transition={{ duration: 15, repeat: Infinity }}
+                    />
+                </div>
+
+                <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Content */}
                         <motion.div
-                            className="bg-[var(--color-blue-dark)] rounded-3xl p-6 sm:p-8 text-[var(--color-text-white)] w-full max-w-full lg:max-w-[616px] h-auto lg:h-[516px] mx-auto"
-                            variants={itemVariants}
-                            whileHover={scaleHover}
+                            className="space-y-8 z-10"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <motion.div
-                                className="mb-4"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.5, duration: 0.6 }}
+                            <motion.span
+                                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-sm font-medium border border-white/20"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.2 }}
                             >
-                                <span className="bg-[var(--color-blue)] px-3 py-1 rounded-full text-sm font-medium">
-                                    All-in-One Efficiency
-                                </span>
-                            </motion.div>
+                                <Zap className="w-4 h-4" />
+                                All-in-One Efficiency
+                            </motion.span>
+
                             <motion.h1
-                                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.7, duration: 0.8 }}
+                                transition={{ delay: 0.3 }}
                             >
-                                Optimize Workforce<br />
-                                Management with<br />
-                                HR Solutions
+                                Optimize Payroll & Benefits Management
                             </motion.h1>
+
                             <motion.p
-                                className="text-base sm:text-lg mb-8 text-[var(--color-text-white)] leading-relaxed max-w-lg"
+                                className="text-white text-lg md:text-xl leading-relaxed"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.9, duration: 0.8 }}
+                                transition={{ delay: 0.4 }}
                             >
-                                Simplify every aspect of HR — from recruitment and onboarding to payroll,
-                                performance reviews, and employee analytics — with a secure, scalable, and user-
-                                friendly cloud platform built for modern teams and businesses
+                                Simplify payroll processing, benefits administration, and compliance management with a secure platform built for modern businesses.
                             </motion.p>
+
                             <motion.div
-                                className="flex flex-wrap gap-4"
+                                className="flex flex-col sm:flex-row gap-4"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1.1, duration: 0.8 }}
+                                transition={{ delay: 0.5 }}
                             >
                                 <motion.button
-                                    className="bg-[var(--color-blue-darker)] text-[var(--color-text-white)] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[var(--color-blue-darker)] transition-colors"
-                                    whileHover={buttonHover}
-                                    whileTap={{ scale: 0.95 }}
+                                    className="bg-white text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
                                 >
-                                    Get Started Now
+                                    Get Started Free
                                 </motion.button>
                                 <motion.button
-                                    className="border-2 border-[var(--color-blue)] text-[var(--color-text-white)] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[var(--color-blue)] transition-colors"
-                                    whileHover={buttonHover}
-                                    whileTap={{ scale: 0.95 }}
+                                    className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
                                 >
-                                    Learn More
+                                    Watch Demo
                                 </motion.button>
                             </motion.div>
                         </motion.div>
 
-                        {/* Bottom Stats Cards */}
+                        {/* Right Stats Cards */}
                         <motion.div
-                            className="flex flex-col sm:flex-row gap-6 w-full"
-                            variants={itemVariants}
+                            className="grid grid-cols-2 gap-4 lg:gap-6"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            <motion.div
-                                className="bg-[var(--color-bg-secondary)] rounded-2xl p-6 shadow-lg flex-1 w-full h-auto"
-                                whileHover={scaleHover}
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.3, duration: 0.8 }}
-                            >
+                            {[
+                                { icon: Users, label: "Companies", value: "10K+", color: "from-blue-400 to-blue-600" },
+                                { icon: TrendingUp, label: "Accuracy", value: "99.9%", color: "from-green-400 to-green-600" },
+                                { icon: Shield, label: "Compliant", value: "100%", color: "from-purple-400 to-purple-600" },
+                                { icon: Clock, label: "Processing", value: "2min", color: "from-orange-400 to-orange-600" },
+                            ].map((stat, index) => (
                                 <motion.div
-                                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-3"
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    transition={{ delay: 1.5, duration: 0.6, type: "spring" }}
+                                    key={index}
+                                    className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 + index * 0.1 }}
+                                    whileHover={{ y: -5, scale: 1.02 }}
                                 >
-                                    10,000+
+                                    <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                                        <stat.icon className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-white mb-1">{stat.value}</h3>
+                                    <p className="text-white/80 text-sm">{stat.label}</p>
                                 </motion.div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-[var(--color-text-primary)] mb-3">Active Users</h3>
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm sm:text-base">
-                                    Companies across industries rely on our platform
-                                    to manage their HR operations daily
-                                </p>
-                            </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </div>
 
-                            <motion.div
-                                className="bg-[var(--color-bg-gray-light)] rounded-2xl p-2 flex-1 w-full h-52 sm:h-60"
-                                whileHover={scaleHover}
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.4, duration: 0.8 }}
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1560264280-88b68371db39"
-                                    alt="Team working together"
-                                    className="w-full h-full object-cover rounded-xl"
-                                />
-                            </motion.div>
+                {/* Curved Bottom */}
+                <div className="absolute bottom-0 left-0 right-0">
+                    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--color-bg-primary)"/>
+                    </svg>
+                </div>
+            </div>
+
+            {/* Features Section with Curved Title */}
+            <div className="bg-[var(--color-bg-primary)] py-20">
+                <div className="max-w-7xl mx-auto px-4 md:px-8">
+                    {/* Curved Title Section */}
+                    <div className="relative mb-16">
+                        <motion.div
+                            className="text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="inline-block relative">
+                                <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                                    Why Choose <span className="text-[var(--color-blue)]">Payroll Benefits</span>
+                                </span>
+                                <motion.svg
+                                    initial={{ pathLength: 0, opacity: 0 }}
+                                    whileInView={{ pathLength: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                    className="absolute -bottom-2 left-0 w-80 h-4"
+                                    viewBox="0 0 320 12"
+                                    fill="none"
+                                >
+                                    <motion.path
+                                        d="M2 10C70 2, 150 2, 220 10C260 16, 290 10, 318 10"
+                                        stroke="var(--color-blue)"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                    />
+                                </motion.svg>
+                            </div>
+                            <p className="text-[var(--color-text-secondary)] text-lg mt-6 max-w-2xl mx-auto">
+                                Transform your payroll operations with intelligent automation and compliance
+                            </p>
                         </motion.div>
                     </div>
 
-                    {/* Right Image */}
-                    <motion.div
-                        className="relative w-full max-w-full lg:max-w-[616px] h-auto lg:h-[516px] mx-auto"
-                        variants={itemVariants}
-                    >
-                        <motion.div
-                            className="bg-[var(--color-bg-secondary)] rounded-3xl shadow-2xl overflow-hidden h-full"
-                            whileHover={scaleHover}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.6, duration: 1 }}
-                        >
-                            <img
-                                src="https://images.unsplash.com/photo-1590650046871-92c887180603"
-                                alt="Two professionals collaborating"
-                                className="w-full h-full object-cover"
-                            />
-                        </motion.div>
-                        <motion.div
-                            className="bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-blue-dark)] rounded-2xl p-6 sm:p-10 shadow-lg mt-8 w-full h-52 sm:h-60"
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.2, duration: 0.8 }}
-                            whileHover={scaleHover}
-                        >
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
-                                <h3 className="text-base sm:text-lg font-semibold text-[var(--color-text-white)]">Clients across industries</h3>
-                                <motion.div
-                                    className="flex -space-x-2"
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 1.6, duration: 0.6 }}
-                                >
-                                    {[
-                                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-                                        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-                                    ].map((src, index) => (
-                                        <motion.img
-                                            key={index}
-                                            src={src}
-                                            alt={`client${index + 1}`}
-                                            className="w-8 h-8 rounded-full border-2 border-[var(--color-bg-secondary)]"
-                                            initial={{ scale: 0 }}
-                                            animate={{ scale: 1 }}
-                                            transition={{ delay: 1.8 + index * 0.1, duration: 0.4 }}
-                                            whileHover={{ scale: 1.2 }}
-                                        />
-                                    ))}
-                                    <motion.div
-                                        className="w-8 h-8 bg-[var(--color-blue-darker)] rounded-full border-2 border-[var(--color-bg-secondary)] flex items-center justify-center text-xs text-[var(--color-text-white)] font-bold"
-                                        initial={{ scale: 0 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ delay: 2.1, duration: 0.4 }}
-                                        whileHover={{ scale: 1.2 }}
-                                    >
-                                        80+
-                                    </motion.div>
-                                </motion.div>
-                            </div>
-                            <p className="text-[var(--color-text-white)] text-sm mb-4">
-                                Many of our clients report faster hiring processes
-                                and better employee engagement after switching
-                                to our system.
-                            </p>
-                        </motion.div>
-                    </motion.div>
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: Shield,
+                                title: "Compliance Management",
+                                desc: "Stay compliant with automated tax calculations and regulatory updates",
+                                gradient: "from-blue-500 to-blue-600"
+                            },
+                            {
+                                icon: Clock,
+                                title: "Fast Processing",
+                                desc: "Process payroll for thousands of employees in minutes, not hours",
+                                gradient: "from-green-500 to-green-600"
+                            },
+                            {
+                                icon: TrendingUp,
+                                title: "Cost Optimization",
+                                desc: "Reduce payroll costs with automated workflows and analytics",
+                                gradient: "from-purple-500 to-purple-600"
+                            },
+                            {
+                                icon: Users,
+                                title: "Employee Self-Service",
+                                desc: "Empower employees with access to payslips and tax documents",
+                                gradient: "from-red-500 to-red-600"
+                            },
+                            {
+                                icon: Award,
+                                title: "Benefits Administration",
+                                desc: "Manage health insurance, retirement plans, and perks seamlessly",
+                                gradient: "from-yellow-500 to-yellow-600"
+                            },
+                            {
+                                icon: Zap,
+                                title: "Real-time Reports",
+                                desc: "Access instant payroll reports and analytics dashboards",
+                                gradient: "from-indigo-500 to-indigo-600"
+                            },
+                        ].map((feature, index) => (
+                            <motion.div
+                                key={index}
+                                className="group relative bg-[var(--color-white)] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[var(--color-border)]"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -8 }}
+                            >
+                                <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                                    <feature.icon className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{feature.title}</h3>
+                                <p className="text-[var(--color-text-secondary)] leading-relaxed">{feature.desc}</p>
+                                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform`} />
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
-            </motion.div>
+            </div>
 
-            {/* Second Section - Payroll Benefits */}
-            <motion.div
-                className="max-w-7xl mx-auto mt-20 px-4"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-            >
-                <motion.div
-                    className="text-center mb-8"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <p className="text-[var(--color-success-medium)] font-semibold mb-2 text-sm sm:text-base">Why Payroll & Benefits Matter</p>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-text-primary)] mb-4 leading-tight">
-                        Timely Pay, Meaningful Benefits,<br />
-                        Happier Employees
-                    </h2>
-                    <p className="text-[var(--color-text-secondary)] text-base sm:text-lg">
-                        Strong payroll and benefits systems improve trust, retention, compliance, and workforce satisfaction
-                    </p>
-                </motion.div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
+            {/* Benefits Section with Curved Background */}
+            <div className="relative bg-[var(--color-white)] py-20 overflow-hidden">
+                {/* Top Curve */}
+                <div className="absolute top-0 left-0 right-0">
+                    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                        <path d="M0 0L60 15C120 30 240 60 360 75C480 90 600 90 720 82.5C840 75 960 60 1080 52.5C1200 45 1320 45 1380 45L1440 45V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0Z" fill="var(--color-bg-primary)"/>
+                    </svg>
+                </div>
+
+                <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+                    {/* Curved Title */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="space-y-8">
-                            {/* Feature Items */}
-                            {[
-                                { icon: Shield, title: "Builds Employee Trust and Loyalty" },
-                                { icon: Users, title: "Ensures Legal and Tax Compliance" },
-                                { icon: Award, title: "Attracts and Retains Top Talent" }
-                            ].map((feature, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="flex gap-4"
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
-                                    whileHover={{ x: 10 }}
-                                >
-                                    <motion.div
-                                        className="w-10 h-10 sm:w-12 sm:h-12 bg-[var(--color-blue)] rounded-full flex items-center justify-center flex-shrink-0"
-                                        whileHover={{ rotate: 360 }}
-                                        transition={{ duration: 0.6 }}
-                                    >
-                                        <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-text-white)]" />
-                                    </motion.div>
-                                    <div>
-                                        <h3 className="text-lg sm:text-xl font-semibold text-[var(--color-text-primary)] mb-2">
-                                            {feature.title}
-                                        </h3>
-                                        <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm sm:text-base">
-                                            On-time, accurate payroll shows employees they're valued — boosting morale and
-                                            reducing turnover. Automated updates reduce risk of penalties from ever-changing
-                                            labor and tax regulations.
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
+                        <div className="inline-block relative">
+                            <span className="text-4xl md:text-5xl font-bold text-[var(--color-text-primary)]">
+                                Key <span className="text-[var(--color-blue)]">Benefits</span>
+                            </span>
+                            <motion.svg
+                                initial={{ pathLength: 0, opacity: 0 }}
+                                whileInView={{ pathLength: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                                className="absolute -bottom-2 left-0 w-48 h-4"
+                                viewBox="0 0 190 12"
+                                fill="none"
+                            >
+                                <motion.path
+                                    d="M2 10C50 2, 100 2, 150 10C165 14, 175 10, 188 10"
+                                    stroke="var(--color-blue)"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                />
+                            </motion.svg>
                         </div>
                     </motion.div>
 
-                    {/* Right Image */}
-                    <motion.div
-                        className="flex justify-center"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <motion.div
-                            className="bg-[var(--color-bg-secondary)] rounded-3xl shadow-2xl overflow-hidden w-full max-w-full h-auto"
-                            whileHover={scaleHover}
+                            className="bg-[var(--color-bg-primary)] rounded-3xl p-10 shadow-xl"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1590650046871-92c887180603"
-                                alt="Happy employees collaboration"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="space-y-6">
+                                {benefits.map((benefit, index) => (
+                                    <BenefitItem key={index} text={benefit} index={index} />
+                                ))}
+                            </div>
                         </motion.div>
-                    </motion.div>
+
+                        <motion.div
+                            className="bg-[var(--color-blue)] rounded-3xl p-10 shadow-xl text-white flex flex-col justify-center"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="text-3xl font-bold mb-6">Ready to Streamline Payroll?</h3>
+                            <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                                Join thousands of businesses that trust promanager for accurate, compliant, and efficient payroll management.
+                            </p>
+                            <motion.button
+                                className="bg-white text-[var(--color-blue)] px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all w-fit"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                Start Free Trial
+                            </motion.button>
+                        </motion.div>
+                    </div>
                 </div>
-            </motion.div>
+            </div>
+
             <AccordionDemo />
         </div>
     );
