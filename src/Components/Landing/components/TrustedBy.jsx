@@ -28,7 +28,7 @@ const COMPANY_LOGOS = [
 
 const TrustedBy = () => {
   return (
-    <section className="py-12 lg:py-6 bg-gradient-to-b from-[var(--color-blue-lightest)] to-white border-y border-[var(--color-border-primary)]">
+    <section className="py-12 lg:py-6 bg-white ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Side - Text (20% width on large screens) */}
@@ -101,7 +101,7 @@ const TrustedBy = () => {
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                      className="max-w-full max-h-full object-contain  transition-all duration-300 "
                     />
                   </div>
                 ))}
@@ -130,7 +130,7 @@ const TrustedBy = () => {
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                      className="max-w-full max-h-full object-contain  transition-all duration-300"
                     />
                   </div>
                 ))}

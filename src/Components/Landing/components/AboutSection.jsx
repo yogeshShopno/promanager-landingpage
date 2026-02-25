@@ -27,10 +27,13 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-[var(--color-blue-lightest)] relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#6C4CF1]/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/10 to-transparent rounded-full blur-3xl" />
+    <section className="py-20 lg:py-28 bg-white relative ">
+
+ <div className="absolute top-1/2 z-10   right-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

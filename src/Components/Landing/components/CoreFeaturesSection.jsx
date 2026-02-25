@@ -25,9 +25,9 @@ const coreFeatures = [
 
 const CoreFeaturesSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#6C4CF1] via-[#5b3dd9] to-[#4B2EDB] text-white relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[var(--color-blue)] text-white relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 opacity-50">
+      <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="core-grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -42,13 +42,11 @@ const CoreFeaturesSection = () => {
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#core-grid)" />
-          
-          
         </svg>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
+        {/* Header with Curved Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,37 +54,38 @@ const CoreFeaturesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          {/* Title with Curved Line */}
-          <div className="relative inline-block mb-8">
-            <motion.h3
+          {/* Curved Title Section */}
+          <div className="relative mb-8">
+            <motion.div
+              className="inline-block relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-2xl lg:text-3xl font-bold"
             >
-              Core Features
-            </motion.h3>
-            
-            {/* Curved Line SVG */}
-            <motion.svg
-              initial={{ pathLength: 0, opacity: 0 }}
-              whileInView={{ pathLength: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
-              className="absolute top-10 left-1/2 -translate-x-1/2 w-40 h-4"
-              viewBox="0 0 160 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <motion.path
-                d="M2 10C35 2, 70 2, 105 10C130 16, 145 10, 158 10"
-                stroke="white"
-                strokeWidth="3"
-                strokeLinecap="round"
-                opacity="0.6"
-              />
-            </motion.svg>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
+                Core Features
+              </h3>
+              
+              {/* Curved Line SVG */}
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 h-4"
+                viewBox="0 0 160 12"
+                fill="none"
+              >
+                <motion.path
+                  d="M2 10C35 2, 70 2, 105 10C130 16, 145 10, 158 10"
+                  stroke="white"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  opacity="0.8"
+                />
+              </motion.svg>
+            </motion.div>
           </div>
 
           <motion.h2
@@ -105,14 +104,14 @@ const CoreFeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white/80 text-lg"
+            className="text-white/80 text-lg leading-relaxed"
           >
             Explore the powerful features of ProManager designed to automate payroll, 
             ensure compliance, and give employees a seamless experience.
           </motion.p>
         </motion.div>
 
-        {/* Features Grid - Vertical Cards */}
+        {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {coreFeatures.map((feature, index) => (
             <motion.div
@@ -124,21 +123,12 @@ const CoreFeaturesSection = () => {
               whileHover={{ y: -10 }}
               className="group"
             >
-              {/* Unique Card Design */}
               <div className="relative h-full">
-                {/* Number Badge - Top */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.15 + 0.3, type: "spring" }}
-                  className="absolute -top-4 left-6 z-10 w-12 h-12 bg-white text-[#6C4CF1] rounded-2xl flex items-center justify-center shadow-2xl font-black text-xl"
-                >
-                  0{index + 1}
-                </motion.div>
+                {/* Number Badge */}
+               
 
                 {/* Card Content */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 h-full flex flex-col">
+                <div className="bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 h-full flex flex-col hover:bg-white/15 transition-all duration-300">
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
                     <motion.img
@@ -148,7 +138,7 @@ const CoreFeaturesSection = () => {
                       alt={feature.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#6C4CF1]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-blue)]/50 to-transparent" />
                     
                     {/* Sparkle Icon */}
                     <motion.div

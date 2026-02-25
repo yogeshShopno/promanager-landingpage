@@ -6,36 +6,13 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-gradient-start)] via-[var(--color-blue-lightest)] to-[var(--color-blue-lighter)]">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-[var(--color-blue-light)] to-transparent rounded-full blur-3xl opacity-20"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, -90, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-[var(--color-blue)] to-transparent rounded-full blur-3xl opacity-20"
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="relative pt-20 lg:py-32 overflow-hidden  bg-white  ">
+<div className="absolute top-28 z-10   -left-20 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
+      <div className="container mx-auto px-4 relative z-10 ">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">

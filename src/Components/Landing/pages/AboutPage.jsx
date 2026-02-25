@@ -40,7 +40,7 @@ const AboutPage = () => {
                         >
                             About ProManager
                         </motion.h3>
-                        
+
                         <motion.svg
                             initial={{ pathLength: 0, opacity: 0 }}
                             animate={{ pathLength: 1, opacity: 1 }}
@@ -84,8 +84,14 @@ const AboutPage = () => {
             <AboutSection />
 
             {/* Detailed About Section */}
-            <section className="py-20 px-4 bg-[var(--color-bg-primary)]">
+            <section className="py-20 px-4 ">
+
                 <div className="container mx-auto max-w-7xl">
+                    <div className="absolute bottom-0 z-10   left-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left - Image */}
                         <motion.div
@@ -144,7 +150,7 @@ const AboutPage = () => {
                                 <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]">
                                     Our Mission
                                 </h3>
-                                
+
                                 <motion.svg
                                     initial={{ pathLength: 0, opacity: 0 }}
                                     whileInView={{ pathLength: 1, opacity: 1 }}
@@ -213,25 +219,8 @@ const AboutPage = () => {
             </section>
 
             {/* Vision Section */}
-            <section className="py-20 px-4 bg-gradient-to-br from-[#6C4CF1] via-[#5b3dd9] to-[#4B2EDB] text-white relative overflow-hidden">
+            <section className="py-20 px-4 bg-white  text-black relative overflow-hidden">
                 {/* Animated Background */}
-                <div className="absolute inset-0 opacity-10">
-                    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="vision-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                                <motion.circle 
-                                    cx="30" 
-                                    cy="30" 
-                                    r="1.5" 
-                                    fill="white"
-                                    animate={{ opacity: [0.3, 0.8, 0.3] }}
-                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#vision-grid)" />
-                    </svg>
-                </div>
 
                 <div className="container mx-auto max-w-7xl relative z-10">
                     <motion.div
@@ -246,7 +235,7 @@ const AboutPage = () => {
                             <h2 className="text-2xl lg:text-3xl font-bold">
                                 Our Vision
                             </h2>
-                            
+
                             <motion.svg
                                 initial={{ pathLength: 0, opacity: 0 }}
                                 whileInView={{ pathLength: 1, opacity: 1 }}
@@ -267,7 +256,7 @@ const AboutPage = () => {
                             </motion.svg>
                         </div>
 
-                        <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-black/80 max-w-2xl mx-auto">
                             Built by payroll specialists and tech innovators with a passion for simplifying payroll worldwide.
                         </p>
                     </motion.div>
@@ -314,25 +303,17 @@ const AboutPage = () => {
                                             className="w-full h-full object-cover"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        
+
                                         {/* Number Badge */}
-                                        <motion.div
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5, delay: i * 0.15 + 0.3, type: "spring" }}
-                                            className="absolute top-4 right-4 w-12 h-12 bg-white text-[#6C4CF1] rounded-xl flex items-center justify-center font-black text-lg shadow-xl"
-                                        >
-                                            {card.number}
-                                        </motion.div>
+                                      
                                     </div>
-                                    
+
                                     {/* Content */}
                                     <div className="p-6">
-                                        <h3 className="text-xl font-bold mb-3 group-hover:text-white/90 transition-colors">
+                                        <h3 className="text-xl font-bold mb-3 group-hover:text-black/90 transition-colors">
                                             {card.title}
                                         </h3>
-                                        <p className="text-white/70 leading-relaxed">
+                                        <p className="text-black/70 leading-relaxed">
                                             {card.description}
                                         </p>
                                     </div>

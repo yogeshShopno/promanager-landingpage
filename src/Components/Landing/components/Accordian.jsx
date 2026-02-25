@@ -132,7 +132,7 @@ const AccordionDemo = ({ features = promanagerFeatures }) => {
     const [activeImage, setActiveImage] = useState(features[0].image);
 
     return (
-        <section className="py-16 bg-[var(--color-bg-primary)]">
+        <section className="py-16 bg-white">
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <div className="text-center mb-16">

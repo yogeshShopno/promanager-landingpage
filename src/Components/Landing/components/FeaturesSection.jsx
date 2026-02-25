@@ -38,7 +38,7 @@ const benefits = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-10 lg:py-10 bg-gradient-to-b from-[var(--color-bg-primary)] to-white relative overflow-hidden">
+    <section className="py-10 lg:py-10 bg-white relative overflow-hidden">
       <Helmet>
         <title>Payroll Software Features | promanager</title>
         <meta

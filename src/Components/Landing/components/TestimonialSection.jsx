@@ -113,7 +113,12 @@ const thirdColumn = testimonials.slice(6, 9);
 // Main Testimonials component
 const TestimonialSection = () => {
   return (
-    <section className="bg-background my-20 relative">
+    <section className="bg-white py-20 relative z-50">
+      <div className="absolute z-10 hidden sm:block    right-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
       <div className="container z-10 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,7 +132,7 @@ const TestimonialSection = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)]">
               Testimonials
             </h3>
-            
+
             {/* Curved Line SVG */}
             <motion.svg
               initial={{ pathLength: 0, opacity: 0 }}

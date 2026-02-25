@@ -169,7 +169,7 @@ const App = () => {
           )}
 
           <main
-            className="transition-all duration-300 overflow-y-auto"
+            className="transition-all duration-300 "
             style={getMainContentStyle()}
           >
             <Suspense fallback={<LoadingSpinner />}>
