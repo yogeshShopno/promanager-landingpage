@@ -25,10 +25,20 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
+    <section className="py-16 lg:py-20 bg-white relative ">
+      <div className="absolute top-20 z-10   -left-20 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
+
+      <div className="absolute bottom-0 z-10   right-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#6C4CF1]/5 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/5 to-transparent rounded-full blur-3xl" />
+
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -51,7 +61,7 @@ const ServicesSection = () => {
                 >
                   Our Services
                 </motion.span>
-                
+
                 {/* Curved Line SVG */}
                 <motion.svg
                   initial={{ pathLength: 0, opacity: 0 }}
@@ -77,7 +87,7 @@ const ServicesSection = () => {
                   </defs>
                 </motion.svg>
               </div>
-              
+
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[var(--color-text-primary)] leading-tight">
                 Future-Ready Payroll
                 <br />
@@ -111,9 +121,8 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                  isEven ? "" : "lg:grid-flow-dense"
-                }`}
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${isEven ? "" : "lg:grid-flow-dense"
+                  }`}
               >
                 {/* Image Side */}
                 <motion.div
@@ -126,6 +135,7 @@ const ServicesSection = () => {
                   <div className="relative group">
                     {/* Main Image */}
                     <div className="relative rounded-2xl overflow-hidden ">
+                     
                       <motion.img
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.5 }}
@@ -168,17 +178,7 @@ const ServicesSection = () => {
                   className={`space-y-6 ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}
                 >
                   {/* Number Badge */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-[#6C4CF1]/10 to-[#4B2EDB]/10 rounded-xl"
-                  >
-                    <span className="text-xl font-black bg-gradient-to-r from-[#6C4CF1] to-[#4B2EDB] bg-clip-text text-transparent">
-                      0{index + 1}
-                    </span>
-                  </motion.div>
+                 
 
                   {/* Title */}
                   <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)] leading-tight">

@@ -35,7 +35,7 @@ const EmployeeManagement = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen ">
             <Helmet>
                 <title>Employee Management Software | promanager Payroll & HR</title>
                 <meta name="description" content="promanager Employee Management Software helps businesses streamline HR, payroll, attendance, compliance, and workforce operations with ease and accuracy." />

@@ -219,7 +219,7 @@ const ServicePage = () => {
             </section>
 
             {/* Features Grid Section */}
-            <section className="py-16 bg-[var(--color-bg-primary)]">
+            <section className="py-16 ">
                 <div className="container mx-auto max-w-7xl px-4">
                     {/* Title with Curved Line */}
                     <div className="relative text-center mb-16">

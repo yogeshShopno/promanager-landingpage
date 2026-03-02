@@ -47,7 +47,7 @@ const resourceCategories = [
 
 const ResourceTemplatesSection = () => {
   return (
-    <section className="py-10 lg:py-10 bg-gradient-to-b from-white to-[var(--color-bg-primary)] relative overflow-hidden">
+    <section className="py-10 lg:py-10 bg-white relative overflow-hidden">
       {/* Minimalist Monochrome Abstract SVG Background */}
       <div className="absolute inset-0 opacity-50">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +59,6 @@ const ResourceTemplatesSection = () => {
           <rect width="100%" height="100%" fill="url(#grid)" />
           
           {/* Abstract Shapes */}
-          <circle cx="10%" cy="20%" r="150" fill="#6C4CF1" opacity="0.03" />
-          <circle cx="90%" cy="80%" r="200" fill="#4B2EDB" opacity="0.03" />
           <path d="M 0 50 Q 25 25, 50 50 T 100 50" stroke="#6C4CF1" strokeWidth="2" fill="none" opacity="0.05" />
           <path d="M 100 0 Q 75 25, 50 0 T 0 0" stroke="#4B2EDB" strokeWidth="2" fill="none" opacity="0.05" />
           
@@ -72,9 +70,7 @@ const ResourceTemplatesSection = () => {
         </svg>
       </div>
 
-      {/* Decorative Background */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#6C4CF1]/5 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-[#4B2EDB]/5 to-transparent rounded-full blur-3xl" />
+      
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}

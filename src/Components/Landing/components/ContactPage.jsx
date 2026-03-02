@@ -174,13 +174,18 @@ const ContactPage = () => {
         {/* Curved Bottom */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--color-bg-primary)"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
           </svg>
         </div>
       </div>
 
       {/* Contact Form Section with Curved Title */}
-      <div className="bg-[var(--color-bg-primary)] py-20">
+      <div className="bg-white py-20">
+         <div className="absolute top-1/2 z-10   left-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           {/* Curved Title Section */}
           <div className="relative mb-16">
@@ -230,39 +235,39 @@ const ContactPage = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Full Name</label>
-                      <Input placeholder="Enter your first and last name" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input placeholder="Enter your first and last name" className="border-[var(--color-border)] bg-white" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Work Email Address</label>
-                      <Input type="email" placeholder="We'll send the meeting link here" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input type="email" placeholder="We'll send the meeting link here" className="border-[var(--color-border)] bg-white" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Company Name</label>
-                      <Input placeholder="Let us know where you're from" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input placeholder="Let us know where you're from" className="border-[var(--color-border)] bg-white" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Job Title / Role</label>
-                      <Input placeholder="So we can tailor the session" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input placeholder="So we can tailor the session" className="border-[var(--color-border)] bg-white" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Number of Employees</label>
-                      <Input placeholder="Helps us recommend the right plan" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input placeholder="Helps us recommend the right plan" className="border-[var(--color-border)] bg-white" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--color-text-primary)]">Preferred Date & Time</label>
-                      <Input placeholder="Choose your best time" className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                      <Input placeholder="Choose your best time" className="border-[var(--color-border)] bg-white" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-[var(--color-text-primary)]">Additional Notes or Questions (Optional)</label>
-                    <Textarea placeholder="Let us know what you'd like to discuss." rows={4} className="border-[var(--color-border)] bg-[var(--color-bg-primary)]" />
+                    <Textarea placeholder="Let us know what you'd like to discuss." rows={4} className="border-[var(--color-border)] bg-white" />
                   </div>
 
                   <motion.button
@@ -280,13 +285,13 @@ const ContactPage = () => {
       </div>
 
       {/* FAQ Section with Curved Background */}
-      <div className="relative bg-[var(--color-white)] py-20 overflow-hidden">
+      <div className="relative bg-white py-20 ">
         {/* Top Curve */}
-        <div className="absolute top-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 0L60 15C120 30 240 60 360 75C480 90 600 90 720 82.5C840 75 960 60 1080 52.5C1200 45 1320 45 1380 45L1440 45V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0Z" fill="var(--color-bg-primary)"/>
-          </svg>
-        </div>
+       <div className="absolute top-1/2 z-10   right-0 w-[400px] h-[500px] rounded-full
+    bg-[#6c4cf1]
+    blur-[90px]
+    opacity-20
+  "/>
 
         <div className="relative max-w-5xl mx-auto px-4 md:px-8">
           {/* Curved Title */}

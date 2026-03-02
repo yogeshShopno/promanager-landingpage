@@ -13,7 +13,7 @@ import CTASection from "../Landing/components/CTASection";
 
 const LandingPage = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen overflow-hidden ">
             <Helmet>
                 {/* ✅ Page Title & Meta with Brand Focus */}
                 <title>promanager | Payroll & Attendance Software – Official Website</title>
